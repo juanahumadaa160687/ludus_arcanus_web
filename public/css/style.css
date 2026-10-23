@@ -42,7 +42,7 @@ body{
 
 #navbar{
     background-color: var(--color-surface-a10);
-    padding: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,6 +78,10 @@ body{
                     color: var(--color-primary-a10);
                 }
 
+            }
+            .active{
+                color: var(--color-primary-a10);
+                text-decoration: underline;
             }
         }
     }
@@ -124,4 +128,120 @@ body{
     padding: 1rem;
     text-align: center;
     color: var(--color-light-a0);
+
+    #footer-content{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+        #logo-footer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .links-footer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            ul{
+                list-style: none;
+                padding: 0;
+
+                li{
+                    margin: 1rem 0;
+
+                    a{
+                        color: var(--color-light-a0);
+                        text-decoration: none;
+                        transition: color 0.3s;
+
+                        &:hover{
+                            color: var(--color-primary-a10);
+                            text-decoration: underline;
+                        }
+                    }
+                    .active{
+                        color: var(--color-primary-a10);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .social-footer{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+            ul{
+                list-style: none;
+                padding: 0;
+
+                li{
+                    margin: 1rem 0;
+                    text-align: start;
+
+                    a{
+                        color: var(--color-light-a0);
+                        text-decoration: none;
+                        transition: color 0.3s;
+                        &:hover{
+                            color: var(--color-primary-a10);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    #hero{
+        h1{
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        p{
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        #hero-buttons{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .cta-button{
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            width: 100%;
+        }
+        padding: 1rem;
+    }
+
+    #footer-content{
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #navbar{
+        #logo{
+            display: none;
+        }
+        ul{
+            li{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                a{
+                    text-align: center;
+                }
+            }
+        }
+    }
 }
