@@ -4,12 +4,13 @@
     --color-dark-a0: #000000;
 
     /** Colores primarios del tema */
-    --color-primary-a10: #ff8d4a;
-    --color-primary-a20: #ff9b62;
-    --color-primary-a30: #ffa877;
+    --color-primary-a10: #2dfee9;
+    --color-primary-a20: #5affeb;
+    --color-primary-a30: #77ffed;
 
     /** Color de acento del tema */
-    --color-accent-a10: #5affeb;
+    --color-accent-a10: #fe2d42;
+    --color-accent-a20: #ff4f56;
 
     /** Colores de superficie del tema */
     --color-surface-a0: #27292b;
@@ -23,7 +24,7 @@
     --color-warning-a0: #ffbc5e;
 
     /** Colores de error */
-    --color-danger-a0: #ff8080;
+    --color-error-a0: #ff8080;
 
     /** Colores de información */
     --color-info-a0: #87d1ff;
@@ -39,6 +40,7 @@ body{
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+
 
 #navbar{
     background-color: var(--color-surface-a10);
@@ -82,39 +84,55 @@ body{
             .active{
                 color: var(--color-primary-a10);
                 text-decoration: underline;
+                font-weight: bold;
             }
         }
     }
 }
 
 #hero{
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('../img/board-game.webp') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)), url('../img/board-game.webp') no-repeat center center;
     background-size: cover;
-    height: 100vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: end;
+    align-items: start;
+    position: relative;
+
+    .hero-content{
+        position: absolute;
+        bottom: 10%;
+        left: 2rem;
+    }
 
     h1{
         font-size: 3.5rem;
         margin: 0;
     }
 
+    #hero-buttons{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+        justify-content: start;
+        align-items: start;
+    }
+
     .cta-button{
-        background-color: var(--color-primary-a10);
+        background-color: var(--color-accent-a10);
         color: var(--color-light-a0);
         border: none;
-        padding: 0.75rem 1.5rem;
-        margin: 0.5rem;
+        padding: 0.8rem 0.75rem;
         font-size: 1rem;
         cursor: pointer;
         transition: background-color 0.3s;
-        border-radius: 5px;
+        border-radius: 10px;
     }
 
     .cta-button:hover{
-        background-color: var(--color-primary-a20);
+        background-color: var(--color-accent-a20);
     }
 
     p{
@@ -138,6 +156,11 @@ body{
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+
+        .links-content{
+            display: grid;
+            grid-template-columns: auto auto;
         }
 
         .links-footer{
@@ -164,6 +187,7 @@ body{
                     .active{
                         color: var(--color-primary-a10);
                         text-decoration: underline;
+                        font-weight: bold;
                     }
                 }
             }
@@ -180,6 +204,11 @@ body{
                 li{
                     margin: 1rem 0;
                     text-align: start;
+
+                    .icon{
+                        width: 20px;
+                        height: 20px;
+                    }
 
                     a{
                         color: var(--color-light-a0);
@@ -198,6 +227,10 @@ body{
 @media screen and (max-width: 768px) {
 
     #hero{
+
+        justify-content: center;
+        align-items: center;
+
         h1{
             font-size: 2.5rem;
             text-align: center;
