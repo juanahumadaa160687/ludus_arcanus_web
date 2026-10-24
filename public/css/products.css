@@ -77,15 +77,26 @@ main{
         width: 100%;
 
         .cta-button{
-            background-color: var(--color-accent-a10);
-            color: var(--color-light-a0);
-            border: none;
-            padding: 0.75rem 1.5rem;
-            margin: 0.5rem;
+            background-color: var(--primary-button-background);
+            color: var(--primary-button-color);
+            border: var(--primary-button-border);
+            padding: 0.8rem 1rem;
             font-size: 1rem;
             cursor: pointer;
             transition: background-color 0.3s;
-            border-radius: 15px;
+            border-radius: 50px;
+            width: 100%;
+        }
+
+        .cta-button-disabled{
+            background-color: var(--cta-button-disabled-background);
+            color: var(--cta-button-disabled-color);
+            border: var(--cta-button-disabled-border);
+            padding: 0.8rem 1rem;
+            font-size: 1rem;
+            cursor: not-allowed;
+            transition: background-color 0.3s;
+            border-radius: 50px;
             width: 100%;
         }
     }

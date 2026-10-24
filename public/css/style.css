@@ -28,6 +28,41 @@
 
     /** Colores de información */
     --color-info-a0: #87d1ff;
+
+    /** Botones CTA */
+    --cta-button-background: rgba(254, 45, 66, 0.1);
+    --cta-button-color: var(--color-accent-a10);
+    --cta-button-border: 1px solid var(--color-accent-a10);
+
+    /** Botones CTA deshabilitados */
+    --cta-button-disabled-background: rgba(125, 125, 125, 0.1);
+    --cta-button-disabled-color: var(--color-light-a0);
+    --cta-button-disabled-border: 1px solid var(--color-light-a0);
+
+    /** Botones CTA hover */
+    --cta-button-hover-background: var(--color-accent-a20);
+
+    /** Botones primarios */
+    --primary-button-background: rgba(45, 254, 233, 0.1);
+    --primary-button-color: var(--color-primary-a20);
+    --primary-button-border: 1px solid var(--color-primary-a10);
+
+    /** Botones primarios hover */
+    --primary-button-hover-background: var(--color-primary-a20);
+
+    /** Botones secundarios */
+    --secondary-button-background: var(--color-surface-a10);
+    --secondary-button-color: var(--color-light-a0);
+    --secondary-button-border: 1px solid var(--color-light-a0);
+
+    /** Botones secundarios hover */
+    --secondary-button-hover-background: var(--color-surface-a20);
+
+    /** Links */
+    --link-color: var(--color-primary-a10);
+
+    /** Links hover */
+    --link-hover-color: var(--color-primary-a20);
 }
 
 body{
@@ -72,17 +107,17 @@ body{
 
         li{
             a{
-                color: var(--color-light-a0);
+                color: var(--link-color);
                 text-decoration: none;
                 transition: color 0.3s;
 
                 &:hover{
-                    color: var(--color-primary-a10);
+                    color: var(--link-hover-color);
                 }
 
             }
             .active{
-                color: var(--color-primary-a10);
+                color: var(--color-light-a0);
                 text-decoration: underline;
                 font-weight: bold;
             }
@@ -121,18 +156,18 @@ body{
     }
 
     .cta-button{
-        background-color: var(--color-accent-a10);
-        color: var(--color-light-a0);
-        border: none;
-        padding: 0.8rem 0.75rem;
+        background-color: var(--primary-button-background);
+        color: var(--primary-button-color);
+        border: var(--primary-button-border);
+        padding: 0.8rem 1rem;
         font-size: 1rem;
         cursor: pointer;
         transition: background-color 0.3s;
-        border-radius: 10px;
+        border-radius: 50px;
     }
 
     .cta-button:hover{
-        background-color: var(--color-accent-a20);
+        background-color: var(--primary-button-hover-background);
     }
 
     p{
@@ -149,7 +184,12 @@ body{
 
     #footer-content{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: auto auto auto;
+
+        .logo-footer-img{
+            width: 250px;
+            height: auto;
+        }
 
         #logo-footer{
             display: flex;
@@ -161,6 +201,7 @@ body{
         .links-content{
             display: grid;
             grid-template-columns: auto auto;
+            align-items: center;
         }
 
         .links-footer{
@@ -175,17 +216,17 @@ body{
                     margin: 1rem 0;
 
                     a{
-                        color: var(--color-light-a0);
+                        color: var(--link-color);
                         text-decoration: none;
                         transition: color 0.3s;
 
                         &:hover{
-                            color: var(--color-primary-a10);
+                            color: var(--link-hover-color);
                             text-decoration: underline;
                         }
                     }
                     .active{
-                        color: var(--color-primary-a10);
+                        color: var(--color-light-a0);
                         text-decoration: underline;
                         font-weight: bold;
                     }
@@ -195,7 +236,9 @@ body{
         .social-footer{
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 1rem;
+            width: 100%;
 
             ul{
                 list-style: none;
@@ -204,18 +247,23 @@ body{
                 li{
                     margin: 1rem 0;
                     text-align: start;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+
 
                     .icon{
                         width: 20px;
                         height: 20px;
+                        margin-right: 0.5rem;
                     }
 
                     a{
-                        color: var(--color-light-a0);
+                        color: var(--link-color);
                         text-decoration: none;
                         transition: color 0.3s;
                         &:hover{
-                            color: var(--color-primary-a10);
+                            color: var(--link-hover-color);
                         }
                     }
                 }
