@@ -2,6 +2,23 @@ main{
     margin-bottom: 2.3rem;
 }
 
+.categories-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    a{
+        text-decoration: none;
+        color: var(--link-color);
+        font-size: 1rem;
+        transition: color 0.3s;
+    }
+    a:hover{
+        color: var(--link-hover-color);
+    }
+}
+
 #products-content{
     display: grid;
     grid-template-rows: auto 1fr;
@@ -52,29 +69,48 @@ main{
 
 .product{
     width: 22rem;
-    border: 1px solid Gray;
-    border-radius: 10px;
+    border-radius: 20px;
     display: grid;
-    grid-template-rows: auto auto auto 1fr auto;
+    grid-template-rows: auto auto auto auto;
     padding: 1rem;
     background-color: var(--color-surface-a10);
     margin: 0 5px;
+    justify-content: center;
+    align-items: center;
 
-    h2{
-        font-size: 1.5rem;
-        margin: 0.5rem;
+    .container-info{
+        display: grid;
+        grid-template-rows: auto auto;
     }
 
-    p{
-        font-size: 1rem;
-        margin: 1rem 0.5rem;
+    h2{
+        font-size: var(--subtitle-size);
+        font-weight: var(--subtitle-weight);
+        margin-top: 1rem;
+    }
+
+    .product-description{
+        font-size: var(--text-size);
+        margin-bottom: 0.5rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    a{
+        text-decoration: none;
+        color: var(--link-color);
+    }
+    a:hover{
+        color: var(--link-hover-color);
     }
 
     .cta-button-container{
         display: flex;
-        justify-content: end;
+        flex-direction: column;
+        justify-content: center;
         align-items: end;
-        width: 100%;
 
         .cta-button{
             background-color: var(--primary-button-background);
@@ -86,6 +122,11 @@ main{
             transition: background-color 0.3s;
             border-radius: 50px;
             width: 100%;
+        }
+
+        .cta-button:hover{
+            background-color: var(--primary-button-hover-background);
+            color: #27292b;
         }
 
         .cta-button-disabled{
@@ -101,19 +142,28 @@ main{
         }
     }
 
+    .shop-container{
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
     .price-container{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-
-        .discount{
-            margin: 0.5rem;
-            color: var(--color-success-a0);
-        }
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
 
         .price{
-            font-size: 1.2rem;
+            font-size: var(--subtitle-size);
+            font-weight: var(--subtitle-weight);
+            margin-top: 0;
+        }
+
+        .old-price{
+            text-decoration: line-through;
+            margin-bottom: 0;
         }
     }
 
@@ -165,27 +215,28 @@ main{
     }
 }
 
-.product:hover{
-    -webkit-animation: product-scale-up 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-            animation: product-scale-up 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+.product:hover {
+    -webkit-animation: shadow-inset-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: shadow-inset-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-@keyframes product-scale-up {
+@keyframes shadow-inset-center {
     0% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
+        -webkit-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
     }
     100% {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
+        -webkit-box-shadow: inset 0 0 14px 0 rgba(45, 254, 233, 0.5);
+        box-shadow: inset 0 0 14px 0 rgba(45, 254, 233, 0.5);
     }
 }
+
 
 .product-mesa{
     grid-template-rows: auto auto auto 1fr auto;
 }
 
-.container-info{
+.container-info-table{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,8 +246,6 @@ main{
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 25px;
-        padding: 0 0.25rem;
         margin: 0.5rem;
         width: 100%;
 
@@ -217,6 +266,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1rem 0;
 }
 
 @media screen and (max-width: 768px) {
