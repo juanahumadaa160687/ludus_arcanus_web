@@ -14,6 +14,12 @@
     <!-- Favicon -->
     <link rel="icon" href="img/logo_ludus.jpeg" type="image/x-icon">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+
     <!-- Link a Google Font (opcional) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,323 +31,323 @@
 <body>
 
 <header>
-    <div id="navbar">
-        <div id="logo">
-            <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" width="70" height="40">
-            <p>Ludus Arcanus Store</p>
+  <nav class="navbar md:navbar-expand sticky-top" id="navbar">
+    <div class="container-fluid">
+      <img src="img/logo_ludus.png" alt="Ludus Arcanus Logo" width="65" height="40" class="d-inline-block align-text-top me-2">
+      <a class="navbar-brand" href="index.html" id="nav-brand">Ludus Arcanus Store</a>
+      <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" aria-hidden="true"></span>
+      </button>
+      <dialog class="drawer drawer-end" tabindex="-1" id="navbarDrawer" aria-labelledby="navbarDrawerLabel">
+        <div class="drawer-header">
+          <h5 class="drawer-title" id="navbarDrawerLabel">Ludus Arcanus Store</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
         </div>
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html" >Inicio</a></li>
-                <li><a href="juegos-mesa.html">Juegos de Mesa</a></li>
-                <li><a href="juegos-rol.html">Juegos de Rol</a></li>
-                <li><a href="juegos-cartas.html">Juegos de Cartas</a></li>
-                <li><a href="accesorios.html" class="active">Accesorios</a></li>
-            </ul>
-        </nav>
+        <div class="drawer-body mb-2 md:mb-0">
+          <ul class="nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false" id="dropdownMenuButton">
+                <span id="dropdownMenuLabel">Tienda <i class="bi bi-caret-down-fill"></i></span>
+              </button>
+              <div class="menu" id="dropdown-menu">
+                <a class="menu-item" aria-current="page" href="juegos-mesa.html">Juegos de Mesa</a>
+                <hr class="menu-divider">
+                <a class="menu-item" aria-current="page" href="juegos-cartas.html">Juegos de Cartas</a>
+                <hr class="menu-divider">
+                <a class="menu-item" aria-current="page" href="juegos-rol.html">Juegos de Rol</a>
+                <hr class="menu-divider">
+                <a class="menu-item" aria-current="page" href="accesorios.html">Accesorios</a>
+              </div>
+            </li>
+            <li class="nav-item">
+                                <span class="avatar">
+                                  <img src="" alt="user-avatar" class="avatar-img" id="img-user-avatar">
+                                </span>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="sign-in.html">Ingresar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="btn-signup" aria-current="page" href="sign-up.html">Registrate</a>
+            </li>
+          </ul>
+        </div>
+      </dialog>
     </div>
+  </nav>
 </header>
 
+
 <main>
-    <div id="products-content">
-        <div id="products-content-header">
+
+    <div class="container-fluid" id="main-container">
+
+        <div class="d-flex flex-column justify-content-center align-items-start w-100 m-4">
             <h1>Accesorios</h1>
-            <p>Explora nuestra selección de accesorios para juegos de mesa, rol y cartas. Desde dados personalizados hasta fundas para cartas, tenemos todo lo que necesitas para mejorar tu experiencia de juego.</p>
+            <p>Explora nuestra selección de accesorios. Desde clásicos hasta novedades, tenemos todo lo que necesitas para disfrutar de horas de diversión con amigos y familia.</p>
         </div>
-        <div class="products">
-            <div class="product">
-                <div class="container-stock">
-                    <div class="stock-container">
-                        <p class="stock"><small>Quedan 10 unidades</small></p>
+
+        <div class="container-fluid" id="products-container">
+
+            <div class="card d-flex flex-column product">
+                <img src="img/accesorios/mat_lorwyn.webp" alt="Lorwyn Eclipsed Shiny Playmat - Twilight Diviner" class="card-img-top">
+                <div class="card-body grid text-start">
+                    <div class="container-stock">
+                        <span class="badge stock-normal">Quedan 15 unidades</span>
                     </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/accesorios/bandeja_dados.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Bandeja dados negro</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            ¿Botaste otro meeple al tirar los dados? ¿O perdiste el dado más bacán debajo el mueble maldito?
-                            Entrega estilo y funcionalidad a tu mesa con esta Bandeja de Dados de diseño exclusivo en madera
-                            y eco-cuero.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$24.990</p>
-                        <p class="price">$19.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button">Comprar</button>
+                    <h5 class="card-title">
+                        Lorwyn Eclipsed Shiny Playmat - Twilight Diviner
+                    </h5>
+                    <p class="card-text product-description">
+                        Nuestro tapete Prime Playmat de primera calidad, impreso a todo color y con licencia oficial
+                        es un accesorio esencial para todo jugador apasionado.
+                    </p>
+                    <a href="#" class="link-ver-mas">Ver más...</a>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-column align-items-start justify-content-center">
+                            <p class="old-price">$32.990</p>
+                            <p class="price">$25.990</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-end justify-content-center">
+                            <button class="cta-button">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="stock-warning-container">
-                        <p class="stock-warning"><small>Quedan 3 unidades</small></p>
+
+            <div class="card d-flex flex-column product">
+                <img src="img/accesorios/mat_dbz2.webp" alt="Playmat Dragon Ball Super" class="card-img-top">
+                <div class="card-body grid text-start">
+                    <div class="container-stock">
+                        <span class="badge sin-stock">Producto agotado</span>
                     </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/accesorios/dados_aurora.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Dados RPG dice set Aurora</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">Conjunto de 7 dados acrílicos de primera calidad. Galaxy Series:
-                            colores atrayentes y efectos resplandecientes gracias a sus partículas de purpurina</p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$24.990</p>
-                        <p class="price">$19.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button">Comprar</button>
+                    <h5 class="card-title">
+                        Playmat Dragon Ball Super
+                    </h5>
+                    <p class="card-text product-description">
+                        Oficial Dragon Ball Super playmat las icónicas "Dragon Balls" de la exitosa serie de anime,
+                        empaquetado en tubo de playmat de bonificación
+                    </p>
+                    <a href="#" class="">Ver más...</a>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-column align-items-start justify-content-center">
+                            <p class="old-price">$9.990</p>
+                            <p class="price">$8.990</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-end justify-content-center">
+                            <button class="disabled-button">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="no-stock-container">
-                        <p class="no-stock"><small>Producto Agotado</small></p>
+
+            <div class="card d-flex flex-column product">
+                <img src="img/accesorios/mat_dbz.webp" alt="All Stars Playmat Dragon Ball Super" class="card-img-top">
+                <div class="card-body grid text-start">
+                    <div class="container-stock">
+                        <span class="badge stock-normal">Quedan 10 unidades</span>
                     </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/accesorios/cards_lair.png" alt="Cards Lair 400+" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Cards Lair 400+</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            ¡Una GRAN novedad! Esto es lo que muchos habéis estado esperando: una caja grande premium con el
-                            tamaño perfecto para las cartas de tamaño estándar con fundas. Además, tiene otras características
-                            que la convierten en la caja perfecta para tus noches de juegos.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$69.990</p>
-                        <p class="price">$59.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button-disabled">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="stock-warning-container">
-                        <p class="stock-warning"><small>Quedan 1 unidades</small></p>
-                    </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/accesorios/sidekick_pro.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Sidekick PRO 100+ XL Black</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            Os traemos uno de nuestros mayores éxitos de venta, el modelo Sidekick, en una versión
-                            profesional mejorada. El modelo Sidekick PRO 100+ XL es una caja para mazos de calidad
-                            prémium, diseñada específicamente para el popular formato Commander de Magic:
-                            The Gathering™.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$44.990</p>
-                        <p class="price">$34.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button">Comprar</button>
+                    <h5 class="card-title">
+                        All Stars Playmat Dragon Ball Super
+                    </h5>
+                    <p class="card-text product-description">
+                        ¡Prepárate para la batalla definitiva con el tapete de juego All Stars de Dragon Ball Super!
+                        Este tapete de alta calidad presenta a tus personajes favoritos de la serie, desde Goku y Vegeta
+                        hasta Piccolo y Frieza, en un diseño vibrante y lleno de acción. Con un tamaño perfecto para
+                        tus partidas, este tapete te permitirá organizar tus cartas y mantenerlas seguras mientras
+                        disfrutas de horas de diversión. ¡Lleva tu experiencia de juego al siguiente nivel con este
+                        increíble tapete de Dragon Ball Super!
+                    </p>
+                    <a href="#" class="">Ver más...</a>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-column align-items-start justify-content-center">
+                            <p class="old-price">$9.990</p>
+                            <p class="price">$7.990</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-end justify-content-center">
+                            <button class="cta-button">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="products">
-            <div class="product">
-                <div class="container-stock">
-                    <div class="no-stock-container">
-                        <p class="no-stock"><small>Producto Agotado</small></p>
+
+            <div class="card d-flex flex-column product">
+                <img src="img/accesorios/protector_gijoe.webp" alt="Ultra Pro: Protector Cartas G.I. Joe Hero" class="card-img-top">
+                <div class="card-body grid text-start">
+                    <div class="container-stock">
+                        <span class="badge stock-bajo">Quedan 6 unidades</span>
                     </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/accesorios/token_red.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Token holder – Red</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            ¡Esta es la mejor forma de proteger y transportar tus fichas! Ahorra espacio en las cajas de tus
-                            juegos o en la mesa de juego gracias al modelo Token Holder. En esta caja caben una gran variedad
-                            de fichas, dados e incluso 40 cartas en doble funda, 50 cartas con una sola funda u 80 cartas
-                            sin fundas*.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$3.000</p>
-                        <p class="price">$2.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button-disabled">Comprar</button>
+                    <h5 class="card-title">
+                        Ultra Pro: Protector Cartas G.I. Joe Hero
+                    </h5>
+                    <p class="card-text product-description">
+                        ¡La nostalgia hecha funda! Pack de 100 protectores tamaño estándar con diseño inspirado en G.I.
+                        Joe. Durabilidad y estilo para tus batallas de cartas.
+                    </p>
+                    <a href="#" class="">Ver más...</a>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-column align-items-start justify-content-center">
+                            <p class="old-price">$9.990</p>
+                            <p class="price">$5.990</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-end justify-content-center">
+                            <button class="cta-button">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="stock-warning-container">
-                        <p class="stock-warning"><small>Quedan 4 unidades</small></p>
+
+            <div class="card d-flex flex-column product">
+                <img src="img/accesorios/dados_alien.webp" alt="Alien: El Juego de Rol - Dados de Tensión" class="card-img-top">
+                <div class="card-body grid text-start">
+                    <div class="container-stock">
+                        <span class="badge stock-normal">Quedan 12 unidades</span>
                     </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/accesorios/inserto_folded.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Inserto Folded Space – 7 Wonders</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            Su diseño permite un almacenamiento eficiente y mejora la experiencia de juego. Muchas de las
-                            bandejas pueden utilizarse directamente durante la partida, facilitando considerablemente tanto
-                            la preparación como el guardado del juego.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$19.990</p>
-                        <p class="price">$17.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button">Comprar</button>
+                    <h5 class="card-title">
+                        Alien: El Juego de Rol - Dados de Tensión
+                    </h5>
+                    <p class="card-text product-description">
+                        Un juego de diez dados de Tensión con grabados para ALIEN: El juego de rol. Estos dados especiales
+                        de 16 mm se han diseñado como accesorios específicos para las reglas del juego, pero también
+                        pueden utilizarse como dados normales de seis caras.
+                    </p>
+                    <a href="#" class="">Ver más...</a>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-column align-items-start justify-content-center">
+                            <p class="old-price">$16.990</p>
+                            <p class="price">$10.990</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-end justify-content-center">
+                            <button class="cta-button">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="stock-warning-container">
-                        <p class="stock-warning"><small>Quedan 2 unidades</small></p>
+
+            <div class="card d-flex flex-column product">
+                <img src="img/accesorios/dados_moon.webp" alt="GG Galaxy Series - Moon - RPG Dice Set" class="card-img-top">
+                <div class="card-body grid text-start">
+                    <div class="container-stock">
+                        <span class="badge stock-bajo">Quedan 2 unidades</span>
                     </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/accesorios/mat_marvel.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Game Mat XL Marvel Champions</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            Gracias a su gran calidad, estos tapetes extra grandes a todo color son un accesorio imprescindible
-                            para partidas de 2 jugadores. Además, cada tapete tiene un reverso antideslizante que evitará que se
-                            mueva en la mesa de juego.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$44.990</p>
-                        <p class="price">$34.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button">Comprar</button>
+                    <h5 class="card-title">
+                        GG Galaxy Series - Moon - RPG Dice Set
+                    </h5>
+                    <p class="card-text product-description">
+                        Conjunto de 7 dados acrílicos de primera calidadGalaxy Series: colores atrayentes y efectos
+                        resplandecientes gracias a sus partículas de purpurina El paquete contiene D4, D6, D8, D10x2
+                        (10 y 00), D12 y D20 Todos los dados tienen bordes redondeados Son perfectos para una gran
+                        variedad de juegos de rol y otros juegos parecidos
+                    </p>
+                    <a href="#" class="">Ver más...</a>
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-column align-items-start justify-content-center">
+                            <p class="old-price">$14.990</p>
+                            <p class="price">$10.990</p>
+                        </div>
+                        <div class="d-flex flex-column align-items-end justify-content-center">
+                            <button class="cta-button">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="no-stock-container">
-                        <p class="no-stock"><small>Producto Agotado</small></p>
+
+            <div class="card d-flex flex-column product">
+                <img src="img/accesorios/dados_aurora.webp" alt="GG Galaxy Series - Aurora - RPG Dice Set" class="card-img-top">
+                <div class="card-body grid text-start">
+                    <div class="container-stock">
+                        <span class="badge sin-stock">Producto agotado</span>
                     </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/accesorios/porta_cartas.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Porta cartas Standard</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            Compraste todas las fundas necesarias. Ahora las manitos sucias de los amigos no arruinarán tu juego
-                            nunca más. La cantidad de cartas que cabe en cada Porta-Mazo depende muchísimo en el grosor de las
-                            fundas usadas.  Versiones “EXTRA alto” típicamente caben 50 cartas enfundadas en cada sección
-                            (un set de 2 debe almacenar cómodamente las 280 cartas de Terraforming Mars)
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$6.000</p>
-                        <p class="price">$4.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button-disabled">Comprar</button>
+                    <h5 class="card-title">
+                        GG Galaxy Series - Aurora - RPG Dice Set
+                    </h5>
+                    <p class="card-text product-description">
+                        Conjunto de 7 dados acrílicos de primera calidadGalaxy Series: colores atrayentes y efectos
+                        resplandecientes gracias a sus partículas de purpurina El paquete contiene D4, D6, D8, D10x2
+                        (10 y 00), D12 y D20 Todos los dados tienen bordes redondeados Son perfectos para una gran
+                        variedad de juegos de rol y otros juegos parecidos
+                    </p>
+                    <a href="#" class="">Ver más...</a>
+                    <div class="card-footer grid">
+                        <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+                            <p class="old-price">$14.990</p>
+                            <p class="price">$10.990</p>
+                        </div>
+                        <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+                            <button class="disabled-button">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="card d-flex flex-column product">
+                <img src="img/accesorios/dados_classic.webp" alt="Classic RPG - White & Black Dice Set" class="card-img-top">
+                <div class="card-body grid text-start">
+                    <div class="container-stock">
+                        <span class="badge sin-stock">Producto agotado</span>
+                    </div>
+                    <h5 class="card-title">
+                        Classic RPG - White & Black Dice Set
+                    </h5>
+                    <p class="card-text product-description">
+                        Set de 7 dados. Incluye D4, D6, D8, D10, D12, D20.
+                    </p>
+                    <a href="#" class="">Ver más...</a>
+                    <div class="card-footer grid">
+                        <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+                            <p class="old-price">$5.990</p>
+                            <p class="price">$3.990</p>
+                        </div>
+                        <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+                            <button class="disabled-button">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
 </main>
 
 <footer id="footer">
     <div id="footer-content">
         <div id="logo-footer">
-            <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" width="250" height="150">
+            <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" class="logo-footer-img">
         </div>
         <div class="links-content">
             <div class="links-footer">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="tienda.html" class="active">Tienda</a></li>
-                    <li><a href="terminos.html">Términos y Condiciones</a></li>
-                    <li><a href="privacidad.html">Política de Privacidad</a></li>
-                    <li><a href="condiciones_envio.html">Condiciones de Envío</a></li>
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="terminos.html" class="footer-link">Términos y Condiciones</a></li>
+                    <li><a href="privacidad.html" class="footer-link">Política de Privacidad</a></li>
+                    <li><a href="condiciones_envio.html" class="footer-link">Condiciones de Envío</a></li>
                 </ul>
             </div>
         </div>
         <div class="social-footer">
             <ul>
-                <li><img src="img/icons/address.svg" alt="Ubicación" class="icon"> <p>Calle Falsa 123, Iquique, Chile</p></li>
-                <li><img src="img/icons/phone.svg" alt="Teléfono" class="icon"> <p>+56 9 6567 890</p></li>
-                <li><img src="img/icons/mail.svg" alt="Email" class="icon"> <p>ludus_arcanus@example.com</p></li>
-                <li>
-                    <a href="#"><img src="img/icons/facebook.svg" alt="Facebook" class="icon"></a>
-                    <a href="#"><img src="img/icons/instagram.svg" alt="Instagram" class="icon"></a>
-                </li>
+                <li><i class="bi bi-geo-alt"></i> <p>Calle Falsa 123, Iquique, Chile</p></li>
+                <li><i class="bi bi-telephone"></i> <p>+56 9 6567 890</p></li>
+                <li><i class="bi bi-envelope"></i> <p>ludus_arcanus@example.com</p></li>
+                <li><a href="#" class="icon"><i class="bi bi-instagram"></i></a> <a href="#" class="icon"><i class="bi bi-twitter-x"></i></a> <a href="#" class="icon"><i class="bi bi-facebook"></i></a></li>
+
             </ul>
         </div>
     </div>
 
-    <p>&copy; 2026 Ludus Arcanus. Todos los derechos reservados.</p>
+    <p id="copyright-year"></p>
 </footer>
+
+<!-- Enlace al archivo JavaScript -->
+<script type="module" src="js/main.js"></script>
+
+<!-- Bootstrap JS (opcional) -->
+<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 
 </body>
 </html>

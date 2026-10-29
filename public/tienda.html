@@ -1,403 +1,1044 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ludus Arcanus es un sitio web dedicado a los juegos de mesa, rol y cartas. Descubre reseñas, estrategias y noticias sobre tus juegos favoritos.">
-    <meta name="keywords" content="juegos de mesa, juegos de rol, juegos de cartas, reseñas de juegos, estrategias de juegos, noticias de juegos">
-    <meta name="author" content="Juan Pablo Ahumada">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ludus Arcanus es un sitio web dedicado a los juegos de mesa, rol y cartas. Descubre reseñas, estrategias y noticias sobre tus juegos favoritos.">
+  <meta name="keywords" content="juegos de mesa, juegos de rol, juegos de cartas, reseñas de juegos, estrategias de juegos, noticias de juegos">
+  <meta name="author" content="Juan Pablo Ahumada">
 
-    <!-- Enlace al archivo de estilos CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/products.css">
+  <!-- Enlace al archivo de estilos CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/products.css">
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/logo_ludus.jpeg" type="image/x-icon">
+  <!-- Favicon -->
+  <link rel="icon" href="img/logo_ludus.jpeg" type="image/x-icon">
 
-    <!-- Link a Google Font (opcional) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css">
+
+  <!-- Link a Google Font (opcional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
-    <title>Ludus Arcanus</title>
+  <title>Ludus Arcanus Store</title>
 </head>
 <body>
 
 <header>
-    <div id="navbar">
-        <div id="logo">
-            <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" width="70" height="40">
-            <p>Tienda</p>
+  <nav class="navbar md:navbar-expand sticky-top" id="navbar">
+    <div class="container-fluid">
+      <img src="img/logo_ludus.png" alt="Ludus Arcanus Logo" width="65" height="40" class="d-inline-block align-text-top me-2">
+      <a class="navbar-brand" href="index.html" id="nav-brand">Ludus Arcanus Store</a>
+      <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" aria-hidden="true"></span>
+      </button>
+      <dialog class="drawer drawer-end" tabindex="-1" id="navbarDrawer" aria-labelledby="navbarDrawerLabel">
+        <div class="drawer-header">
+          <h5 class="drawer-title" id="navbarDrawerLabel">Ludus Arcanus Store</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
         </div>
-        <nav>
-            <ul id="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="juegos-mesa.html">Juegos de Mesa</a></li>
-                <li><a href="juegos-rol.html">Juegos de Rol</a></li>
-                <li><a href="juegos-cartas.html">Juegos de Cartas</a></li>
-                <li><a href="accesorios.html">Accesorios</a></li>
-            </ul>
-        </nav>
+        <div class="drawer-body mb-2 md:mb-0">
+          <ul class="nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false" id="dropdownMenuButton">
+                <span id="dropdownMenuLabel">Tienda <i class="bi bi-caret-down-fill"></i></span>
+              </button>
+              <div class="menu" id="dropdown-menu">
+                <a class="menu-item" aria-current="page" href="juegos-mesa.html">Juegos de Mesa</a>
+                <hr class="menu-divider">
+                <a class="menu-item" aria-current="page" href="juegos-cartas.html">Juegos de Cartas</a>
+                <hr class="menu-divider">
+                <a class="menu-item" aria-current="page" href="juegos-rol.html">Juegos de Rol</a>
+                <hr class="menu-divider">
+                <a class="menu-item" aria-current="page" href="accesorios.html">Accesorios</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <span class="avatar">
+                <img src="" alt="user-avatar" class="avatar-img" id="img-user-avatar">
+              </span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="sign-in.html">Ingresar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="btn-signup" aria-current="page" href="sign-up.html">Registrate</a>
+            </li>
+          </ul>
+        </div>
+      </dialog>
     </div>
+  </nav>
 </header>
 
 <main>
-    <div id="products-content">
-        <div id="products-content-header">
-            <h1>Ludus Arcanus Store</h1>
-            <p>Explora nuestra selección de productos. Desde accesorios hasta juegos, tenemos todo lo que necesitas para disfrutar de horas de diversión con amigos y familia.</p>
+
+  <div class="container-fluid" id="main-container">
+
+    <div class="d-flex flex-column justify-content-center align-items-start w-100">
+      <h1>Ludus Arcanus Store</h1>
+      <p>Bienvenido a nuestra tienda en línea, donde encontrarás una amplia variedad de juegos y accesorios para todos los gustos.</p>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center w-100" id="carousel-container">
+      <div id="carouselExample" class="carousel carousel-overlay slide carousel-fade" data-bs-autoplay="true">
+        <div class="carousel-inner rounded-5">
+          <div class="carousel-item active">
+            <img src="img/banners/banner1.png" class="d-block w-100" alt="preventa">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banners/banner2.png" class="d-block w-100" alt="preventa">
+          </div>
+          <div class="carousel-item">
+            <img src="img/banners/banner3.png" class="d-block w-100" alt="preventa">
+          </div>
         </div>
-        <div class="categories-container">
-            <a href="juegos-mesa.html">Juegos de Mesa</a>
-            <a href="juegos-rol.html">Juegos de Rol</a>
-            <a href="juegos-cartas.html">Juegos de Cartas</a>
-            <a href="accesorios.html">Accesorios</a>
+        <div class="carousel-overlay-controls">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
         </div>
-        <div class="products">
-            <div class="product">
+      </div>
+    </div>
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="buttons-group btn-solid" onclick="window.location.href='juegos-mesa.html'">Juegos de Mesa</button>
+          <button type="button" class="buttons-group btn-solid" onclick="window.location.href='juegos-cartas.html'">Juegos de Cartas</button>
+          <button type="button" class="buttons-group btn-solid" onclick="window.location.href='juegos-rol.html'">Juegos de Rol</button>
+          <button type="button" class="buttons-group btn-solid" onclick="window.location.href='accesorios.html'">Accesorios</button>
+      </div>
+
+    <div class="container-fluid" id="products-container">
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-mesa/monopoly_pkm.webp" alt="Monopoly Pokemon" class="card-img-top">
+            <div class="card-body grid text-start">
                 <div class="container-stock">
-                    <div class="no-stock-container">
-                        <p class="no-stock"><small>Producto Agotado</small></p>
-                    </div>
+                    <span class="badge stock-normal">Quedan 15 unidades</span>
                 </div>
-                <div class="product-img">
-                    <img src="img/accesorios/token_red.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Token holder – Red</h2>
+                <h5 class="card-title">
+                    Monopoly Pokemon
+                </h5>
+                <p class="card-text product-description">
+                    INTENTA ATRAPAR POKÉMON SALVAJES: Lánzate a una emocionante aventura para atrapar Pokémon
+                    con tu familia y amigos con este Monopoly Edición Pokémon, el cual cuenta con lugares y
+                    personajes inspirados en el universo Pokémon
+                </p>
+                <a href="#" class="link-ver-mas">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$36.990</p>
+                        <p class="price">$30.990</p>
                     </div>
-                    <div>
-                        <p class="product-description">
-                            ¡Esta es la mejor forma de proteger y transportar tus fichas! Ahorra espacio en las cajas de tus
-                            juegos o en la mesa de juego gracias al modelo Token Holder. En esta caja caben una gran variedad
-                            de fichas, dados e incluso 40 cartas en doble funda, 50 cartas con una sola funda u 80 cartas
-                            sin fundas*.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$3.000</p>
-                        <p class="price">$2.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button-disabled">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="stock-warning-container">
-                        <p class="stock-warning"><small>Quedan 4 unidades</small></p>
-                    </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/accesorios/inserto_folded.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Inserto Folded Space – 7 Wonders</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            Su diseño permite un almacenamiento eficiente y mejora la experiencia de juego. Muchas de las
-                            bandejas pueden utilizarse directamente durante la partida, facilitando considerablemente tanto
-                            la preparación como el guardado del juego.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$19.990</p>
-                        <p class="price">$17.990</p>
-                    </div>
-                    <div class="cta-button-container">
+                    <div class="d-flex flex-column align-items-end justify-content-center">
                         <button class="cta-button">Comprar</button>
                     </div>
                 </div>
             </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="no-stock-container">
-                        <p class="no-stock"><small>Producto agotado</small></p>
-                    </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/juegos-mesa/ark_nova.png" alt="Ark Nova" width="100%">
-                </div>
-                <div class="container-info-table">
-                    <div class="info-container">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Jugadores</th>
-                                <th>Edad</th>
-                                <th>Dificultad</th>
-                                <th>Idioma</th>
-                            </tr>
+        </div>
 
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1-4</td>
-                                <td>14+</td>
-                                <td>Intermedio</td>
-                                <td>Español</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-mesa/ark_nova.webp" alt="Ark Nova" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge sin-stock">Producto agotado</span>
                 </div>
-                <div class="container-info">
-                    <div><h2>Ark Nova</h2></div>
-                    <div>
-                        <p class="product-description">
-                            En Ark Nova, planearás y diseñarás un zoológico moderno y científicamente administrado. Con el
-                            objetivo final de ser propietario del establecimiento zoológico más exitoso, construirás
-                            recintos, albergarás animales y apoyarás proyectos de conservación en todo el mundo.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
+                <h5 class="card-title">
+                    Ark Nova
+                </h5>
+                <p class="card-text product-description">
+                    En Ark Nova, planearás y diseñarás un zoológico moderno y científicamente administrado. Con el
+                    objetivo final de ser propietario del establecimiento zoológico más exitoso, construirás
+                    recintos, albergarás animales y apoyarás proyectos de conservación en todo el mundo.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
                         <p class="old-price">$81.990</p>
                         <p class="price">$79.990</p>
                     </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button-disabled">Comprar</button>
+                    <div class="d-flex flex-column align-items-end justify-content-center">
+                        <button class="disabled-button">Comprar</button>
                     </div>
                 </div>
             </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="stock-container">
-                        <p class="stock"><small>Quedan 10 unidades</small></p>
-                    </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/juegos-mesa/catan_despertar.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info-table">
-                    <div class="info-container">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Jugadores</th>
-                                <th>Edad</th>
-                                <th>Dificultad</th>
-                                <th>Idioma</th>
-                            </tr>
+        </div>
 
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>3-4</td>
-                                <td>10+</td>
-                                <td>Básico</td>
-                                <td>Español</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-mesa/catan_despertar.webp" alt="Catan – El despertar de la humanidad" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge stock-normal">Quedan 10 unidades</span>
                 </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Catan – El despertar de la humanidad</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            Las primeras ramas del árbol genealógico humano brotaron en África hace hasta 300.000 años.
-                            Con el paso de los milenios, los humanos fueron echando raíces en todo el mundo, evolucionando,
-                            adaptándose e innovando.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
+                <h5 class="card-title">
+                    Catan – El despertar de la humanidad
+                </h5>
+                <p class="card-text product-description">
+                    Las primeras ramas del árbol genealógico humano brotaron en África hace hasta 300.000 años.
+                    Con el paso de los milenios, los humanos fueron echando raíces en todo el mundo, evolucionando,
+                    adaptándose e innovando.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
                         <p class="old-price">$64.990</p>
                         <p class="price">$54.990</p>
                     </div>
-                    <div class="cta-button-container">
+                    <div class="d-flex flex-column align-items-end justify-content-center">
                         <button class="cta-button">Comprar</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="products">
-            <div class="product">
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-mesa/lotr_aventura.webp" alt="El Señor de los Anillos: Aventura hacia el monte del destino" class="card-img-top">
+            <div class="card-body grid text-start">
                 <div class="container-stock">
-                    <div class="stock-warning-container">
-                        <p class="stock-warning"><small>Quedan 3 unidades</small></p>
-                    </div>
+                    <span class="badge stock-bajo">Quedan 6 unidades</span>
                 </div>
-                <div class="product-img">
-                    <img src="img/juegos-rol/alien_caja_inicio.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Alien – Caja de Inicio</h2>
+                <h5 class="card-title">
+                    El Señor de los Anillos: Aventura hacia el monte del destino
+                </h5>
+                <p class="card-text product-description">
+                    En El Señor de los Anillos: Aventura hacia el Monte del Destino, los jugadores siguen la
+                    historia del peligroso viaje de Frodo para destruir el Anillo Único en los fuegos del Monte
+                    del Destino. Está acompañado por su conocida Comunidad, encargada de protegerlo de los
+                    peligros que enfrentará en el camino.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$36.990</p>
+                        <p class="price">$34.990</p>
                     </div>
-                    <div>
-                        <p class="product-description">
-                            Esta caja contiene una aventura introductoria para el juego de rol oficial de ALIEN, un universo
-                            de horror corporal y despiadadas ambiciones corporativas en el que individuos sintéticos juegan
-                            a ser Dios mientras transportistas espaciales y marines coloniales incuban criaturas de
-                            pesadilla en el interior de sus propios cuerpos. Es un universo cruel e implacable en el que
-                            todos sois prescindibles.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$55.990</p>
-                        <p class="price">$52.990</p>
-                    </div>
-                    <div class="cta-button-container">
+                    <div class="d-flex flex-column align-items-end justify-content-center">
                         <button class="cta-button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="stock-warning-container">
-                        <p class="stock-warning"><small>Quedan 3 unidades</small></p>
-                    </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/juegos-rol/berlin_1960.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Berlín 1960</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            Las cenizas de la Segunda Guerra Mundial aún no se han enfriado cuando la tensión entre Oriente
-                            y Occidente alcanza niveles críticos. En las calles de una ciudad dividida, agentes secretos,
-                            informantes y operaciones encubiertas convierten a Berlín en uno de los principales escenarios
-                            de la lucha entre la CIA y la KGB.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$50.000</p>
-                        <p class="price">$44.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="stock-warning-container">
-                        <p class="stock-warning"><small>Quedan 2 unidades</small></p>
-                    </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/juegos-carta/marvel_mutante.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Marvel Champions – Génesis Mutante</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            El mundo siempre necesita héroes. Para conseguir una paz verdadera, hay momentos en los que tenemos
-                            que dejar de lado nuestras diferencias y centrarnos en hacer lo correcto. Eso es exactamente lo que
-                            hace la Patrulla-X, y su historia gira en torno a la lucha por proteger un mundo que les odia y les
-                            teme.
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$49.990</p>
-                        <p class="price">$39.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="container-stock">
-                    <div class="no-stock-container">
-                        <p class="no-stock"><small>Producto Agotado</small></p>
-                    </div>
-                </div>
-                <div class="product-img">
-                    <img src="img/juegos-carta/marvel_tirania.png" alt="Dados Personalizados" width="100%">
-                </div>
-                <div class="container-info">
-                    <div>
-                        <h2>Marvel Champions – La Tiranía de Cráneo Rojo</h2>
-                    </div>
-                    <div>
-                        <p class="product-description">
-                            Esta caja de expansión contiene 265 cartas que os enfrentarán a ti y a tus amigos contra el infame
-                            Cráneo Rojo, las fuerzas de Hydra y el ejército de mercenarios sanguinarios que opera a su servicio.
-                            ¡La tiranía de Cráneo Rojo presenta cinco escenarios nuevos conectados entre sí para narrar un
-                            relato de acción y aventura que pondrá a prueba a los más avezados héroes!
-                        </p>
-                        <a href="#">Ver más</a>
-                    </div>
-                </div>
-                <div class="shop-container">
-                    <div class="price-container">
-                        <p class="old-price">$49.990</p>
-                        <p class="price">$39.990</p>
-                    </div>
-                    <div class="cta-button-container">
-                        <button class="cta-button-disabled">Comprar</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-mesa/guerra_pacifico.webp" alt="Guerra en el Pacífico" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge stock-normal">Quedan 12 unidades</span>
+                </div>
+                <h5 class="card-title">
+                    Guerra en el Pacífico
+                </h5>
+                <p class="card-text product-description">
+                    La Guerra del Pacífico es un juego de mesa ambientado en el conflicto armado ocurrido entre
+                    1879 y 1883 en el que Perú y Bolivia se enfrentaron contra Chile, para 2, 3 o 4 jugadores,
+                    mayores de 10 años. Hay dos bandos por los que puedes jugar: la alianza de Perú y Bolivia o Chile.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$29.990</p>
+                        <p class="price">$26.990</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-end justify-content-center">
+                        <button class="cta-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-mesa/catan_base.webp" alt="Catan Base" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge stock-bajo">Quedan 2 unidades</span>
+                </div>
+                <h5 class="card-title">
+                    Catan Base
+                </h5>
+                <p class="card-text product-description">
+                    Pocos juegos combinan la emoción de la estrategia, el comercio inteligente y la construcción como
+                    Los Colonos de Catan. Este galardonado juego de mesa ofrece una mecánica innovadora que atraerá
+                    incluso al jugador más exigente.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$36.990</p>
+                        <p class="price">$34.990</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-end justify-content-center">
+                        <button class="cta-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-mesa/juicio_final.webp" alt="Juicio Final" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge sin-stock">Producto agotado</span>
+                </div>
+                <h5 class="card-title">
+                    Juicio Final
+                </h5>
+                <p class="card-text product-description">
+                    Juicio Final el juego perfecto para saber qué piensan tus amigas y amigos de ti. Haz las
+                    preguntas más provocadoras e inmorales y conoce las historias más desquiciadas y ocultas de
+                    tus amigos después de cada ronda.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer grid">
+                    <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$29.990</p>
+                        <p class="price">$24.990</p>
+                    </div>
+                    <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+                        <button class="disabled-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-mesa/monopoly_mario.webp" alt="Monopoly – Super Mario GALAXY" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge sin-stock">Producto agotado</span>
+                </div>
+                <h5 class="card-title">
+                    Monopoly – Super Mario Galaxy
+                </h5>
+                <p class="card-text product-description">
+                    ¡Prepárate para una aventura estelar a través de las estrellas! En Monopoly: Edición Super
+                    Mario Galaxy, los jugadores se sumergen en un universo fascinante lleno de planetas, magia y exploración espacial.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer grid">
+                    <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$32.990</p>
+                        <p class="price">$25.990</p>
+                    </div>
+                    <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+                        <button class="disabled-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-rol/ecos_tirania.webp" alt="El Resurgir del Dragón: Ecos de Tiranía" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge stock-normal">Quedan 15 unidades</span>
+                </div>
+                <h5 class="card-title">
+                    El Resurgir del Dragón: Ecos de Tiranía
+                </h5>
+                <p class="card-text product-description">
+                    Cientos de metros bajo la superficie, en las profundidades de Vajra, antiguos peligros amenazan
+                    con desatarse. Una conspiración se ha puesto en marcha, y sus agentes recorren los túneles en
+                    busca de una antigua ciudad subterránea, ahora ocupada por los peligrosos duérgar. Si alguien
+                    no pone fin al conflicto, pronto toda la región se sumirá en el caos.
+                </p>
+                <a href="#" class="link-ver-mas">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$9.990</p>
+                        <p class="price">$7.990</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-end justify-content-center">
+                        <button class="cta-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-rol/resurgir_dragon_bolsillo.webp" alt="El Resurgir del Dragón: Edición de Bolsillo" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge sin-stock">Producto agotado</span>
+                </div>
+                <h5 class="card-title">
+                    El Resurgir del Dragón: Edición de Bolsillo
+                </h5>
+                <p class="card-text product-description">
+                    Solo con este manual básico edición de bolsillo, algunos dados y unos lápices podréis vivir
+                    cientos de aventuras en Voldor, el mundo que os proponemos, o en otros de vuestra propia invención.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$23.990</p>
+                        <p class="price">$19.990</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-end justify-content-center">
+                        <button class="disabled-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-rol/inous_cultos.webp" alt="Cultos Innombrables: Inous - Códigos Pnakóticos" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge stock-normal">Quedan 10 unidades</span>
+                </div>
+                <h5 class="card-title">
+                    Cultos Innombrables: Inous - Códigos Pnakóticos
+                </h5>
+                <p class="card-text product-description">
+                    iNous es una aventura sobre nuevas tecnologías y dimensiones alternativas para Cultos Innombrables.
+                    Forma parte de la primera temporada de Códigos Pnakóticos, pero puede jugarse de forma totalmente
+                    independiente con cualquier culto dispuesto a descubrir nuevos secretos arcanos.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$10.990</p>
+                        <p class="price">$8.990</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-end justify-content-center">
+                        <button class="cta-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-rol/kulf_virgen.webp" alt="Kult: Divinidad Perdida - La Virgen Negra" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge stock-bajo">Quedan 6 unidades</span>
+                </div>
+                <h5 class="card-title">
+                    Kult: Divinidad Perdida - La Virgen Negra
+                </h5>
+                <p class="card-text product-description">
+                    La Virgen Negra es una campaña clásica para el juego de rol de terror KULT: Divinidad Perdida
+                    inédita fuera de Suecia y Francia. Cada uno de los seis episodios que la conforman llevan a los
+                    personajes jugadores a una aventura inquietante relacionada con el Ángel de la Muerte Chagidiel,
+                    la Arconte Binah y sus sirvientes.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$59.990</p>
+                        <p class="price">$50.990</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-end justify-content-center">
+                        <button class="cta-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-rol/labyrinth_lord.webp" alt="Labyrinth Lord" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge stock-normal">Quedan 12 unidades</span>
+                </div>
+                <h5 class="card-title">
+                    Labyrinth Lord
+                </h5>
+                <p class="card-text product-description">
+                    Labyrinth Lord es un juego de rol de fantasía que recupera el espíritu de los juegos de la vieja
+                    escuela. Aquí encontrarás un mundo lleno de grandes aventuras ideal para iniciarse en los
+                    juegos de rol y para los más veteranos.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$43.990</p>
+                        <p class="price">$38.990</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-end justify-content-center">
+                        <button class="cta-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-rol/vampiro_sellos.webp" alt="Vampiro: Sellos de Sangre" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge stock-bajo">Quedan 2 unidades</span>
+                </div>
+                <h5 class="card-title">
+                    Vampiro: Sellos de Sangre
+                </h5>
+                <p class="card-text product-description">
+                    La Sangre fluye en canales por los muros de Ur y se acumula en cálices en castillos transilvanos,
+                    portando el poder de la hechicería para guardar, guiar y realizar milagros oscuros imposibles
+                    incluso para los vampiros.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$44.990</p>
+                        <p class="price">$34.990</p>
+                    </div>
+                    <div class="d-flex flex-column align-items-end justify-content-center">
+                        <button class="cta-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-rol/malkingris.webp" alt="Malkingrís" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge sin-stock">Producto agotado</span>
+                </div>
+                <h5 class="card-title">
+                    Malkingrís
+                </h5>
+                <p class="card-text product-description">
+                    ¡Oid! El cadáver del pobre erudito Zubayr, arrastrado hasta la orilla del río de Arena, yace ahora
+                    en el osario. Su destino es ser la cena de un culto de caníbales. Este hecho, aunque desagradable,
+                    no sería vuestro problema si no fuera porque la princesa Karima Gamila, la gnoll más hermosa de
+                    Per-Bastet, os ha rogado que rescatéis el cuerpo de su amigo y le ayudéis a saber qué le ocurrió.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer grid">
+                    <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$15.990</p>
+                        <p class="price">$10.990</p>
+                    </div>
+                    <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+                        <button class="disabled-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+            <img src="img/juegos-rol/post_apocalyptica.webp" alt="Post Apocalyptica: Mundo Roto" class="card-img-top">
+            <div class="card-body grid text-start">
+                <div class="container-stock">
+                    <span class="badge sin-stock">Producto agotado</span>
+                </div>
+                <h5 class="card-title">
+                    Post Apocalyptica: Mundo Roto
+                </h5>
+                <p class="card-text product-description">
+                    Nadie sabe qué ocurrió ni cuándo. Los supervivientes comenzamos recientemente a viajar de nuevo,
+                    explorar y establecer rutas con otros asentamientos contactados. No existen mapas que podamos
+                    consultar, nadie recuerda nada del pasado, por eso es necesario salir al exterior si queremos
+                    sobrevivir y enfrentarnos a lo que nos espera: zonas en las que el tiempo y el espacio se rompen,
+                    apariciones de criaturas terribles, extraños dones entre nosotros… Todo nos habla acerca de lo
+                    dañado que está el mundo, por eso lo llamamos el Mundo roto.
+                </p>
+                <a href="#" class="">Ver más...</a>
+                <div class="card-footer grid">
+                    <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+                        <p class="old-price">$49.990</p>
+                        <p class="price">$39.990</p>
+                    </div>
+                    <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+                        <button class="disabled-button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+          <img src="img/juegos-carta/pokemon_academia.webp" alt="Pokemon TCG: Academia de Combate" class="card-img-top">
+          <div class="card-body grid text-start">
+            <div class="container-stock">
+              <span class="badge stock-normal">Quedan 15 unidades</span>
+            </div>
+            <h5 class="card-title">
+              Pokemon TCG: Academia de Combate
+            </h5>
+            <p class="card-text product-description">
+              ¡Preparate para un combate Pokemon en la academia de combate del juego de cartas
+              coleccionables pokemon! La Academia de combate contiene todo lo que dos entrenadores
+              necesitan para empezar a jugar de inmediato., con manuales para ayudarte con las barajas
+              y que te resulte sencillisimo lanzarte a tu primera partida.
+            </p>
+            <a href="#" class="link-ver-mas">Ver más...</a>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <div class="d-flex flex-column align-items-start justify-content-center">
+                <p class="old-price">$34.990</p>
+                <p class="price">$30.990</p>
+              </div>
+              <div class="d-flex flex-column align-items-end justify-content-center">
+                <button class="cta-button">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+          <img src="img/juegos-carta/pokemon_charizard.webp" alt="Pokemon TCG: Charizard" class="card-img-top">
+          <div class="card-body grid text-start">
+            <div class="container-stock">
+              <span class="badge sin-stock">Producto agotado</span>
+            </div>
+            <h5 class="card-title">
+              Pokemon TCG: Charizard Ex Special Collection
+            </h5>
+            <p class="card-text product-description">
+              Charizard ex quema el liderazgo de la oposición con la astuta potencia de fuego de un
+              Pokémon tipo Oscuridad! Evoluciona de Charmander y Charmeleon, luego usa su fuerte habilidad
+              y ataque para regresar rugiendo. Este ardiente conjunto también viene con 5 paquetes de
+              refuerzo Pokémon TCG y una tarjeta lenticular de gran tamaño con el propio Flame Pokémon.
+            </p>
+            <a href="#" class="">Ver más...</a>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <div class="d-flex flex-column align-items-start justify-content-center">
+                <p class="old-price">$45.990</p>
+                <p class="price">$39.990</p>
+              </div>
+              <div class="d-flex flex-column align-items-end justify-content-center">
+                <button class="disabled-button">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+          <img src="img/juegos-carta/pokemon_masbosstiff.webp" alt="Pokemon TCG: Masbosstiff Ex Showcase" class="card-img-top">
+          <div class="card-body grid text-start">
+            <div class="container-stock">
+              <span class="badge stock-normal">Quedan 10 unidades</span>
+            </div>
+            <h5 class="card-title">
+              Pokemon TCG: Masbosstiff Ex Showcase
+            </h5>
+            <p class="card-text product-description">
+              ¡Masbosstiff ex es un Pokémon tipo Agua que puede ser un gran aliado en tu baraja! Evoluciona de
+              Masbosstiff y usa su habilidad y ataque para dominar el campo de batalla. Este conjunto también
+              incluye 5 paquetes de refuerzo Pokémon TCG y una tarjeta lenticular de gran tamaño con el propio
+              Pokémon.
+            </p>
+            <a href="#" class="">Ver más...</a>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <div class="d-flex flex-column align-items-start justify-content-center">
+                <p class="old-price">$20.990</p>
+                <p class="price">$18.990</p>
+              </div>
+              <div class="d-flex flex-column align-items-end justify-content-center">
+                <button class="cta-button">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+          <img src="img/juegos-carta/pokemon_lucario.webp" alt="Pokemon TCG: Lucario Ex Showcase" class="card-img-top">
+          <div class="card-body grid text-start">
+            <div class="container-stock">
+              <span class="badge stock-bajo">Quedan 6 unidades</span>
+            </div>
+            <h5 class="card-title">
+              Pokemon TCG: Lucario Ex Figure Collection
+            </h5>
+            <p class="card-text product-description">
+              ¡Mega-Lucario ex doblega a sus rivales sin piedad y reparte la Energía descartada entre tus
+              Pokémon en Banca! Incorpora este poder descomunal a tu colección con 1 carta promo holográfica
+              lista para jugar, 1 carta promo jumbo y 1 detallada figura de Mega-Lucario en plena acción.
+              Encontrarás muchos más Pokémon fantásticos dentro del montón de sobres de refuerzo incluidos.
+            </p>
+            <a href="#" class="">Ver más...</a>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <div class="d-flex flex-column align-items-start justify-content-center">
+                <p class="old-price">$36.990</p>
+                <p class="price">$34.990</p>
+              </div>
+              <div class="d-flex flex-column align-items-end justify-content-center">
+                <button class="cta-button">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+          <img src="img/juegos-carta/pokemon_ninetales.webp" alt="Pokemon TCG Ninetales" class="card-img-top">
+          <div class="card-body grid text-start">
+            <div class="container-stock">
+              <span class="badge stock-normal">Quedan 12 unidades</span>
+            </div>
+            <h5 class="card-title">
+              Pokemon TCG: Baraja de Combate Deluxe Ninetales
+            </h5>
+            <p class="card-text product-description">
+              Con estrategias más avanzadas y cartas poderosas adicionales, las nuevas barajas Combate
+              Deluxe de JCC Pokémon ofrecen un paso adelante a los jugadores que están listos para un
+              desafío. Cada baraja de 60 cartas contiene 3 cartas holográficas y todo lo que necesitas
+              para ponerte a jugar de inmediato. ¡Que empiece el combate Deluxe!
+            </p>
+            <a href="#" class="">Ver más...</a>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <div class="d-flex flex-column align-items-start justify-content-center">
+                <p class="old-price">$24.990</p>
+                <p class="price">$20.990</p>
+              </div>
+              <div class="d-flex flex-column align-items-end justify-content-center">
+                <button class="cta-button">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+          <img src="img/juegos-carta/sw_unlimited.webp" alt="Star Wars Unlimited - Twilight of the Republic" class="card-img-top">
+          <div class="card-body grid text-start">
+            <div class="container-stock">
+              <span class="badge stock-bajo">Quedan 2 unidades</span>
+            </div>
+            <h5 class="card-title">
+              Star Wars Unlimited - Twilight of the Republic
+            </h5>
+            <p class="card-text product-description">
+              Empieza tu colección personal de Star Wars: Unlimited con una caja de inicio para dos
+              jugadores, que contiene dos mazos ya diseñados y listos para jugar, ideales para aprender
+              las reglas del juego. ¡También se incluyen conjuntos completos de 10 cartas exclusivas de
+              estas cajas de inicio!
+            </p>
+            <a href="#" class="">Ver más...</a>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <div class="d-flex flex-column align-items-start justify-content-center">
+                <p class="old-price">$40.990</p>
+                <p class="price">$34.990</p>
+              </div>
+              <div class="d-flex flex-column align-items-end justify-content-center">
+                <button class="cta-button">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+          <img src="img/juegos-carta/magic_phoenix.webp" alt="Magic: The Gathering - Pioneer Challenger Deck Izzet Phoenix" class="card-img-top">
+          <div class="card-body grid text-start">
+            <div class="container-stock">
+              <span class="badge sin-stock">Producto agotado</span>
+            </div>
+            <h5 class="card-title">
+              Magic: The Gathering - Pioneer Challenger Deck Izzet Phoenix
+            </h5>
+            <p class="card-text product-description">
+              ¡Desata el poder de la magia con el mazo Challenger Izzet Phoenix! Este mazo está diseñado
+              para jugadores que buscan una experiencia emocionante y estratégica en el formato Pioneer.
+              Con cartas cuidadosamente seleccionadas, podrás invocar al legendario Phoenix y dominar el
+              campo de batalla con hechizos explosivos y criaturas poderosas. ¡Prepárate para desafiar a
+              tus oponentes y demostrar tu habilidad en el juego de cartas más popular del mundo!
+            </p>
+            <a href="#" class="">Ver más...</a>
+            <div class="card-footer grid">
+              <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+                <p class="old-price">$51.990</p>
+                <p class="price">$45.990</p>
+              </div>
+              <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+                <button class="disabled-button">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card d-flex flex-column product">
+          <img src="img/juegos-carta/magic_final.webp" alt="Magic: The Gathering - Final Fantasy - Commander Deck: Revival Trance" class="card-img-top">
+          <div class="card-body grid text-start">
+            <div class="container-stock">
+              <span class="badge sin-stock">Producto agotado</span>
+            </div>
+            <h5 class="card-title">
+              Magic The Gathering: Final Fantasy - Commander Deck: Revival Trance
+            </h5>
+            <p class="card-text product-description">
+              ¡Revive la emoción de Final Fantasy con el mazo Commander Revival Trance! Este mazo está
+              diseñado para los fanáticos de la saga que buscan una experiencia estratégica y épica en el
+              juego de cartas Magic: The Gathering. Con cartas icónicas y habilidades únicas, podrás
+              invocar a tus héroes favoritos y enfrentarte a desafíos legendarios. ¡Prepárate para una
+              aventura inolvidable en el mundo de Final Fantasy!
+            </p>
+            <a href="#" class="">Ver más...</a>
+            <div class="card-footer grid">
+              <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+                <p class="old-price">$84.990</p>
+                <p class="price">$78.990</p>
+              </div>
+              <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+                <button class="disabled-button">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="card d-flex flex-column product">
+        <img src="img/accesorios/mat_lorwyn.webp" alt="Lorwyn Eclipsed Shiny Playmat - Twilight Diviner" class="card-img-top">
+        <div class="card-body grid text-start">
+          <div class="container-stock">
+            <span class="badge stock-normal">Quedan 15 unidades</span>
+          </div>
+          <h5 class="card-title">
+            Lorwyn Eclipsed Shiny Playmat - Twilight Diviner
+          </h5>
+          <p class="card-text product-description">
+            Nuestro tapete Prime Playmat de primera calidad, impreso a todo color y con licencia oficial
+            es un accesorio esencial para todo jugador apasionado.
+          </p>
+          <a href="#" class="link-ver-mas">Ver más...</a>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column align-items-start justify-content-center">
+              <p class="old-price">$32.990</p>
+              <p class="price">$25.990</p>
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-center">
+              <button class="cta-button">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card d-flex flex-column product">
+        <img src="img/accesorios/mat_dbz2.webp" alt="Playmat Dragon Ball Super" class="card-img-top">
+        <div class="card-body grid text-start">
+          <div class="container-stock">
+            <span class="badge sin-stock">Producto agotado</span>
+          </div>
+          <h5 class="card-title">
+            Playmat Dragon Ball Super
+          </h5>
+          <p class="card-text product-description">
+            Oficial Dragon Ball Super playmat las icónicas "Dragon Balls" de la exitosa serie de anime,
+            empaquetado en tubo de playmat de bonificación
+          </p>
+          <a href="#" class="">Ver más...</a>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column align-items-start justify-content-center">
+              <p class="old-price">$9.990</p>
+              <p class="price">$8.990</p>
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-center">
+              <button class="disabled-button">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card d-flex flex-column product">
+        <img src="img/accesorios/mat_dbz.webp" alt="All Stars Playmat Dragon Ball Super" class="card-img-top">
+        <div class="card-body grid text-start">
+          <div class="container-stock">
+            <span class="badge stock-normal">Quedan 10 unidades</span>
+          </div>
+          <h5 class="card-title">
+            All Stars Playmat Dragon Ball Super
+          </h5>
+          <p class="card-text product-description">
+            ¡Prepárate para la batalla definitiva con el tapete de juego All Stars de Dragon Ball Super!
+            Este tapete de alta calidad presenta a tus personajes favoritos de la serie, desde Goku y Vegeta
+            hasta Piccolo y Frieza, en un diseño vibrante y lleno de acción. Con un tamaño perfecto para
+            tus partidas, este tapete te permitirá organizar tus cartas y mantenerlas seguras mientras
+            disfrutas de horas de diversión. ¡Lleva tu experiencia de juego al siguiente nivel con este
+            increíble tapete de Dragon Ball Super!
+          </p>
+          <a href="#" class="">Ver más...</a>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column align-items-start justify-content-center">
+              <p class="old-price">$9.990</p>
+              <p class="price">$7.990</p>
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-center">
+              <button class="cta-button">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card d-flex flex-column product">
+        <img src="img/accesorios/protector_gijoe.webp" alt="Ultra Pro: Protector Cartas G.I. Joe Hero" class="card-img-top">
+        <div class="card-body grid text-start">
+          <div class="container-stock">
+            <span class="badge stock-bajo">Quedan 6 unidades</span>
+          </div>
+          <h5 class="card-title">
+            Ultra Pro: Protector Cartas G.I. Joe Hero
+          </h5>
+          <p class="card-text product-description">
+            ¡La nostalgia hecha funda! Pack de 100 protectores tamaño estándar con diseño inspirado en G.I.
+            Joe. Durabilidad y estilo para tus batallas de cartas.
+          </p>
+          <a href="#" class="">Ver más...</a>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column align-items-start justify-content-center">
+              <p class="old-price">$9.990</p>
+              <p class="price">$5.990</p>
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-center">
+              <button class="cta-button">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card d-flex flex-column product">
+        <img src="img/accesorios/dados_alien.webp" alt="Alien: El Juego de Rol - Dados de Tensión" class="card-img-top">
+        <div class="card-body grid text-start">
+          <div class="container-stock">
+            <span class="badge stock-normal">Quedan 12 unidades</span>
+          </div>
+          <h5 class="card-title">
+            Alien: El Juego de Rol - Dados de Tensión
+          </h5>
+          <p class="card-text product-description">
+            Un juego de diez dados de Tensión con grabados para ALIEN: El juego de rol. Estos dados especiales
+            de 16 mm se han diseñado como accesorios específicos para las reglas del juego, pero también
+            pueden utilizarse como dados normales de seis caras.
+          </p>
+          <a href="#" class="">Ver más...</a>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column align-items-start justify-content-center">
+              <p class="old-price">$16.990</p>
+              <p class="price">$10.990</p>
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-center">
+              <button class="cta-button">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card d-flex flex-column product">
+        <img src="img/accesorios/dados_moon.webp" alt="GG Galaxy Series - Moon - RPG Dice Set" class="card-img-top">
+        <div class="card-body grid text-start">
+          <div class="container-stock">
+            <span class="badge stock-bajo">Quedan 2 unidades</span>
+          </div>
+          <h5 class="card-title">
+            GG Galaxy Series - Moon - RPG Dice Set
+          </h5>
+          <p class="card-text product-description">
+            Conjunto de 7 dados acrílicos de primera calidadGalaxy Series: colores atrayentes y efectos
+            resplandecientes gracias a sus partículas de purpurina El paquete contiene D4, D6, D8, D10x2
+            (10 y 00), D12 y D20 Todos los dados tienen bordes redondeados Son perfectos para una gran
+            variedad de juegos de rol y otros juegos parecidos
+          </p>
+          <a href="#" class="">Ver más...</a>
+          <div class="card-footer d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column align-items-start justify-content-center">
+              <p class="old-price">$14.990</p>
+              <p class="price">$10.990</p>
+            </div>
+            <div class="d-flex flex-column align-items-end justify-content-center">
+              <button class="cta-button">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card d-flex flex-column product">
+        <img src="img/accesorios/dados_aurora.webp" alt="GG Galaxy Series - Aurora - RPG Dice Set" class="card-img-top">
+        <div class="card-body grid text-start">
+          <div class="container-stock">
+            <span class="badge sin-stock">Producto agotado</span>
+          </div>
+          <h5 class="card-title">
+            GG Galaxy Series - Aurora - RPG Dice Set
+          </h5>
+          <p class="card-text product-description">
+            Conjunto de 7 dados acrílicos de primera calidadGalaxy Series: colores atrayentes y efectos
+            resplandecientes gracias a sus partículas de purpurina El paquete contiene D4, D6, D8, D10x2
+            (10 y 00), D12 y D20 Todos los dados tienen bordes redondeados Son perfectos para una gran
+            variedad de juegos de rol y otros juegos parecidos
+          </p>
+          <a href="#" class="">Ver más...</a>
+          <div class="card-footer grid">
+            <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+              <p class="old-price">$14.990</p>
+              <p class="price">$10.990</p>
+            </div>
+            <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+              <button class="disabled-button">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card d-flex flex-column product">
+        <img src="img/accesorios/dados_classic.webp" alt="Classic RPG - White & Black Dice Set" class="card-img-top">
+        <div class="card-body grid text-start">
+          <div class="container-stock">
+            <span class="badge sin-stock">Producto agotado</span>
+          </div>
+          <h5 class="card-title">
+            Classic RPG - White & Black Dice Set
+          </h5>
+          <p class="card-text product-description">
+            Set de 7 dados. Incluye D4, D6, D8, D10, D12, D20.
+          </p>
+          <a href="#" class="">Ver más...</a>
+          <div class="card-footer grid">
+            <div class="g-col-6 d-flex flex-column align-items-start justify-content-center">
+              <p class="old-price">$5.990</p>
+              <p class="price">$3.990</p>
+            </div>
+            <div class="g-col-6 d-flex flex-column align-items-end justify-content-center">
+              <button class="disabled-button">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
+
 </main>
 
 <footer id="footer">
-    <div id="footer-content">
-        <div id="logo-footer">
-            <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" class="logo-footer-img">
-        </div>
-        <div class="links-content">
-            <div class="links-footer">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="tienda.html" class="active">Tienda</a></li>
-                    <li><a href="terminos.html">Términos y Condiciones</a></li>
-                    <li><a href="privacidad.html">Política de Privacidad</a></li>
-                    <li><a href="condiciones_envio.html">Condiciones de Envío</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="social-footer">
-            <ul>
-                <li><img src="img/icons/address.svg" alt="Ubicación" class="icon"> <p>Calle Falsa 123, Iquique, Chile</p></li>
-                <li><img src="img/icons/phone.svg" alt="Teléfono" class="icon"> <p>+56 9 6567 890</p></li>
-                <li><img src="img/icons/mail.svg" alt="Email" class="icon"> <p>ludus_arcanus@example.com</p></li>
-                <li>
-                    <a href="#"><img src="img/icons/facebook.svg" alt="Facebook" class="icon"></a>
-                    <a href="#"><img src="img/icons/instagram.svg" alt="Instagram" class="icon"></a>
-                </li>
-            </ul>
-        </div>
+  <div id="footer-content">
+    <div id="logo-footer">
+      <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" class="logo-footer-img">
     </div>
+    <div class="links-content">
+      <div class="links-footer">
+        <ul>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="terminos.html" class="footer-link">Términos y Condiciones</a></li>
+          <li><a href="privacidad.html" class="footer-link">Política de Privacidad</a></li>
+          <li><a href="condiciones_envio.html" class="footer-link">Condiciones de Envío</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="social-footer">
+      <ul>
+        <li><i class="bi bi-geo-alt"></i> <p>Calle Falsa 123, Iquique, Chile</p></li>
+        <li><i class="bi bi-telephone"></i> <p>+56 9 6567 890</p></li>
+        <li><i class="bi bi-envelope"></i> <p>ludus_arcanus@example.com</p></li>
+        <li><a href="#" class="icon"><i class="bi bi-instagram"></i></a> <a href="#" class="icon"><i class="bi bi-twitter-x"></i></a> <a href="#" class="icon"><i class="bi bi-facebook"></i></a></li>
 
-    <p>&copy; 2026 Ludus Arcanus. Todos los derechos reservados.</p>
+      </ul>
+    </div>
+  </div>
+
+  <p id="copyright-year"></p>
 </footer>
+
+<!-- Enlace al archivo JavaScript -->
+<script type="module" src="js/main.js"></script>
+
+<!-- Bootstrap JS (opcional) -->
+<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 
 </body>
 </html>

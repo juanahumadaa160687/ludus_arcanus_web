@@ -1,21 +1,21 @@
 :root{
+
     /** Colores para texto */
     --color-light-a0: #ffffff;
     --color-dark-a0: #000000;
 
     /** Colores primarios del tema */
     --color-primary-a10: #2dfee9;
-    --color-primary-a20: #5affeb;
-    --color-primary-a30: #77ffed;
+    --color-primary-a20: #8efff0;
 
     /** Color de acento del tema */
-    --color-accent-a10: #fe2d42;
-    --color-accent-a20: #ff4f56;
+    --color-accent-a10: #ff8f4b;
+    --color-accent-a20: #ffa978;
 
     /** Colores de superficie del tema */
-    --color-surface-a0: #27292b;
-    --color-surface-a10: #393b3d;
-    --color-surface-a20: #4c4e50;
+    --color-surface-a0: #141414;
+    --color-surface-a10: #272727;
+    --color-surface-a20: #3b3b3b;
 
     /** Colores de éxito */
     --color-success-a0: #7dff95;
@@ -30,9 +30,9 @@
     --color-info-a0: #87d1ff;
 
     /** Botones CTA */
-    --cta-button-background: rgba(254, 45, 66, 0.1);
-    --cta-button-color: var(--color-accent-a10);
-    --cta-button-border: 1px solid var(--color-accent-a10);
+    --cta-button-background: rgba(254, 143, 75, 0.2);
+    --cta-button-color: #ff8f4b;
+    --cta-button-border: 1px solid #ff8f4b;
 
     /** Botones CTA deshabilitados */
     --cta-button-disabled-background: rgba(125, 125, 125, 0.1);
@@ -40,7 +40,8 @@
     --cta-button-disabled-border: 1px solid var(--color-light-a0);
 
     /** Botones CTA hover */
-    --cta-button-hover-background: var(--color-accent-a20);
+    --cta-button-hover-background: #ff8f4b;
+    --cta-button-hover-color: var(--color-light-a0);
 
     /** Botones primarios */
     --primary-button-background: rgba(45, 254, 233, 0.1);
@@ -49,6 +50,7 @@
 
     /** Botones primarios hover */
     --primary-button-hover-background: var(--color-primary-a20);
+    --primary-button-hover-color: var(--color-light-a0);
 
     /** Botones secundarios */
     --secondary-button-background: var(--color-surface-a10);
@@ -57,25 +59,34 @@
 
     /** Botones secundarios hover */
     --secondary-button-hover-background: var(--color-surface-a20);
+    --secondary-button-hover-color: var(--color-light-a0);
 
     /** Links */
-    --link-color: var(--color-primary-a10);
+    --link-color: #2dfee9;
 
     /** Links hover */
-    --link-hover-color: var(--color-light-a0);
+    --link-hover-color: #FFF;
 
     /** Fuentes */
-    --hero-weight: Bold;
-    --hero-size: 61px;
+    --font-size-hero: 48px;
+    --font-weight-hero: Bold;
+    --font-family-hero: 'Arial Black';
 
-    --title-weight: Bold;
-    --title-size: 38px;
+    --font-weight-title: Bold;
+    --font-family-title: 'Arial Black';
+    --font-size-title: 32px;
 
-    --subtitle-weight: Bold;
-    --subtitle-size: 24px;
+    --font-size-subtitle: 28px;
+    --font-weight-subtitle: Bold;
+    --font-family-subtitle: 'Arial';
 
-    --text-weight: Normal;
-    --text-size: 16px;
+    --font-size-header: 16px;
+    --font-weight-header: Bold;
+    --font-family-header: 'Arial';
+
+    --font-family-body: 'Arial';
+    --font-weight-body: Regular;
+    --font-size-body: 12px;
 
 }
 
@@ -103,13 +114,31 @@ body{
         gap: 1rem;
     }
 
-    #logo{
+    #nav-brand{
         font-size: 1rem;
         font-weight: bold;
         text-decoration: none;
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        color: var(--color-primary-a10);
+    }
+
+    .nav-link{
+        color: var(--link-color);
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+            color: var(--link-hover-color);
+            background-color: transparent;
+        }
+    }
+    .active{
+        color: var(--link-hover-color);
+        text-decoration: underline;
+        font-weight: bold;
+        background-color: transparent;
     }
 
     ul{
@@ -130,11 +159,75 @@ body{
                 }
 
             }
-            .active{
-                color: var(--color-light-a0);
-                text-decoration: underline;
-                font-weight: bold;
+        }
+
+        #btn-signup{
+            background-color: var(--primary-button-background);
+            color: var(--primary-button-color);
+            border: var(--primary-button-border);
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 10px;
+
+            &:hover{
+                background-color: var(--primary-button-hover-background);
+                color: var(--color-dark-a0);
             }
+        }
+    }
+
+    #dropdownMenuLabel{
+        background-color: transparent;
+        color: var(--link-color);
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover{
+            color: var(--link-hover-color);
+            background-color: transparent;
+        }
+    }
+
+    #dropdown-menu{
+        background-color: var(--color-surface-a10);
+        border: 1px solid var(--color-primary-a10);
+        border-radius: 5px;
+        margin-top: 0.5rem;
+        position: absolute;
+        z-index: 1000;
+
+        .menu-divider{
+            height: 1px;
+            background-color: var(--color-primary-a10);
+        }
+
+        a{
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--link-color);
+            text-decoration: none;
+            transition: background-color 0.3s;
+
+            &:hover{
+                background-color: transparent;
+                color: var(--link-hover-color);
+            }
+        }
+    }
+
+    #dropdownMenuButton{
+        &:focus{
+            background-color: transparent;
+        }
+
+        .active{
+            color: var(--link-hover-color);
+            text-decoration: underline;
+            font-weight: bold;
+            background-color: transparent;
         }
     }
 }
@@ -142,7 +235,7 @@ body{
 #hero{
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), url('../img/board-game.webp') no-repeat center center;
     background-size: cover;
-    height: 95vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -150,10 +243,10 @@ body{
     position: relative;
 
     h1{
-        font-size: var(--hero-size);
-        font-weight: var(--hero-weight);
+        font-size: var(--font-size-hero);
+        font-weight: var(--font-weight-hero);
+        font-family: var(--font-family-hero), sans-serif;
         margin: 0;
-
     }
 
     #hero-buttons{
@@ -166,25 +259,26 @@ body{
     }
 
     .cta-button{
-        background-color: var(--primary-button-background);
-        color: var(--primary-button-color);
-        border: var(--primary-button-border);
+        background-color: var(--cta-button-background);
+        color: var(--cta-button-color);
+        border: var(--cta-button-border);
         padding: 0.8rem 2.5rem;
         font-size: 1rem;
         cursor: pointer;
         transition: background-color 0.3s;
-        border-radius: 50px;
+        border-radius: 10px;
         margin-top: 1.5rem;
     }
 
     .cta-button:hover{
-        background-color: var(--primary-button-hover-background);
-        color: #27292b;
+        background-color: var(--cta-button-hover-background);
+        color: var(--color-light-a0);
     }
 
     p{
-        font-size: var(--text-size);
-        font-weight: var(--text-weight);
+        font-size: var(--font-size-body);
+        font-weight: var(--font-weight-body);
+        font-family: var(--font-family-body), sans-serif;
         margin: 0.5rem 0 0;
     }
 }
@@ -254,12 +348,15 @@ body{
                         &:hover{
                             color: var(--link-hover-color);
                         }
+
                     }
+
                     .active{
                         color: var(--color-light-a0);
                         text-decoration: underline;
                         font-weight: bold;
                     }
+
                 }
             }
         }
@@ -281,17 +378,22 @@ body{
                     justify-content: start;
                     align-items: center;
 
-
-                    .icon{
-                        width: 20px;
-                        height: 20px;
-                        margin-right: 0.5rem;
+                    p{
+                        margin: 0;
+                        color: var(--color-primary-a10);
                     }
 
-                    a{
-                        color: var(--link-color);
+                    i{
+                        margin-right: 0.5rem;
+                        color: var(--color-primary-a10);
+                    }
+
+                    .icon{
+                        color: var(--color-primary-a10);
                         text-decoration: none;
                         transition: color 0.3s;
+                        margin-right: 0.5rem;
+
                         &:hover{
                             color: var(--link-hover-color);
                         }
