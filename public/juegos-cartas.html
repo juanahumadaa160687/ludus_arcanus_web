@@ -31,10 +31,9 @@
 <body>
 
 <header>
-  <nav class="navbar md:navbar-expand fixed-top" id="navbar">
+  <nav class="navbar md:navbar-expand sticky-top md:fixed-top" id="navbar">
     <div class="container-fluid">
       <img src="img/logo_ludus.png" alt="Ludus Arcanus Logo" width="65" height="40" class="d-inline-block align-text-top me-2">
-      <a class="navbar-brand" href="index.html" id="nav-brand">Ludus Arcanus Store</a>
       <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" aria-hidden="true"></span>
       </button>
@@ -44,7 +43,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
         </div>
         <div class="drawer-body mb-2 md:mb-0">
-          <ul class="nav justify-content-end flex-grow-1 pe-3">
+          <ul class="nav navbar-nav me-auto">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li>
@@ -314,34 +313,33 @@
 
     </main>
 
-    <footer id="footer">
-        <div id="footer-content">
-            <div id="logo-footer">
-                <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" class="logo-footer-img">
-            </div>
-            <div class="links-content">
-                <div class="links-footer">
-                    <ul>
-                        <li><a href="index.html" class="footer-link">Home</a></li>
-                        <li><a href="terminos.html" class="footer-link">Términos y Condiciones</a></li>
-                        <li><a href="privacidad.html" class="footer-link">Política de Privacidad</a></li>
-                        <li><a href="condiciones_envio.html" class="footer-link">Condiciones de Envío</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="social-footer">
-                <ul>
-                    <li><i class="bi bi-geo-alt"></i> <p>Calle Falsa 123, Iquique, Chile</p></li>
-                    <li><i class="bi bi-telephone"></i> <p>+56 9 6567 890</p></li>
-                    <li><i class="bi bi-envelope"></i> <p>ludus_arcanus@example.com</p></li>
-                    <li><a href="#" class="icon"><i class="bi bi-instagram"></i></a> <a href="#" class="icon"><i class="bi bi-twitter-x"></i></a> <a href="#" class="icon"><i class="bi bi-facebook"></i></a></li>
+<footer id="footer">
+  <div id="footer-content" class="row d-flex flex-column md:flex-row">
+    <div class="col" id="logo-footer">
+      <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" class="img-fluid">
+    </div>
+    <div class="links-content col">
+      <div class="links-footer">
+        <ul>
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="terminos.html" class="footer-link">Términos y Condiciones</a></li>
+          <li><a href="privacidad.html" class="footer-link">Política de Privacidad</a></li>
+          <li><a href="condiciones_envio.html" class="footer-link">Condiciones de Envío</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="social-footer col">
+      <ul>
+        <li><i class="bi bi-geo-alt"></i> <p>Calle Falsa 123, Iquique, Chile</p></li>
+        <li><i class="bi bi-telephone"></i> <p>+56 9 6567 890</p></li>
+        <li><i class="bi bi-envelope"></i> <p>ludus_arcanus@example.com</p></li>
+        <li><a href="#" class="icon"><i class="bi bi-instagram"></i></a> <a href="#" class="icon"><i class="bi bi-twitter-x"></i></a> <a href="#" class="icon"><i class="bi bi-facebook"></i></a></li>
+      </ul>
+    </div>
+  </div>
 
-                </ul>
-            </div>
-        </div>
-
-        <p id="copyright-year"></p>
-    </footer>
+  <p id="copyright-year"></p>
+</footer>
 
     <!-- Enlace al archivo JavaScript -->
     <script type="module" src="js/main.js"></script>
