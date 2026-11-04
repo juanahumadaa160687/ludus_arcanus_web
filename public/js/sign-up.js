@@ -2,6 +2,17 @@ import * as bootstrap from "https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1
 import * as avatarCreator from "./avatar_creator.js";
 import {createAvatar} from "./avatar_creator.js";
 
+const alert_placeholder = document.getElementById("alert")
+
+const append_alert = (message, type) => {
+    const container = document.createElement("div")
+    container.innerHTML = `<div class="alert theme-${type}" role="alert" id="alert-container"><i class="bi bi-check2-circle"></i> <p>${message}</p><button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Cerrar"></button></div>`
+
+    alert_placeholder.append(container)
+}
+
+append_alert('Usuario creado con éxito', 'success')
+
 /* Determinar formato y fecha actual para determinar la fecha máxima seleccionable */
 //Se selecciona el input de la fecha de nacimiento.
 const birthday_input = document.getElementById("birthday")
@@ -27,7 +38,7 @@ const form = document.getElementById("sign-up-form")
 
 if (form) {
     //Se agrega un listener para el envío del formulario (submit)
-    form.addEventListener("submit", event =>{
+    form.addEventListener("submit", event => {
         event.preventDefault()
         event.stopPropagation()
 
@@ -56,120 +67,109 @@ if (form) {
         * El mensaje se muestra por 3.5 segundos.
         *
         * */
-        if (nombre === '' || nombre == null){
+        if (nombre === '' || nombre == null) {
             document.getElementById('name-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> Este campo es obligatorio`
             name.classList.add("is-invalid")
 
-            setTimeout(function (){
+            setTimeout(function () {
                 name.classList.remove('is-invalid')
             }, 3500)
-        }
-
-        else if (apellido === '' || apellido == null){
+        } else if (apellido === '' || apellido == null) {
             document.getElementById('lastname-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> Este campo es obligatorio`
             lastName.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 lastName.classList.remove('is-invalid')
             }, 3500)
-        }
-        else if (nombre_usuario === '' || nombre_usuario == null){
+        } else if (nombre_usuario === '' || nombre_usuario == null) {
             document.getElementById('username-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> Este campo es obligatorio`
             username.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 username.classList.remove('is-invalid')
             }, 3500)
-        }
-        else if (mail === '' || mail == null){
+        } else if (mail === '' || mail == null) {
             document.getElementById('email-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> Este campo es obligatorio`
             email.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 email.classList.remove('is-invalid')
             }, 3500)
-        }
-
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) {
             document.getElementById('email-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> Ingresa un correo electrónico válido`
             email.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 email.classList.remove('is-invalid')
             }, 3500)
-        }
-
-        else if (edad === '' || edad == null){
+        } else if (edad === '' || edad == null) {
             document.getElementById('birthday-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> Este campo es obligatorio`
             birthday_input.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 birthday_input.classList.remove('is-invalid')
             }, 3500)
-        }
-
-        else if (new Date().getFullYear() - new Date(edad).getFullYear() <= 13){
+        } else if (new Date().getFullYear() - new Date(edad).getFullYear() <= 13) {
             document.getElementById('birthday-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> Tienes que ser mayor de 13 años para registrarte`
             birthday_input.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 birthday_input.classList.remove('is-invalid')
             }, 3500)
-        }
-
-        else if (contrasena === '' || contrasena == null){
+        } else if (contrasena === '' || contrasena == null) {
             document.getElementById('password-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> Este campo es obligatorio`
             password.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 password.classList.remove('is-invalid')
             }, 3500)
-        }
-
-        else if (contrasena.length < 8 || contrasena.length > 18){
+        } else if (contrasena.length < 8 || contrasena.length > 18) {
             document.getElementById('password-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> La contraseña debe tener entre 8 y 18 caracteres`
             password.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 password.classList.remove('is-invalid')
             }, 3500)
-        }
-
-        else if (!/[A-Z]/.test(contrasena) || !/[a-z]/.test(contrasena) || !/[0-9]/.test(contrasena) || !/[!@#$%&*?]/.test(contrasena)){
+        } else if (!/[A-Z]/.test(contrasena) || !/[a-z]/.test(contrasena) || !/[0-9]/.test(contrasena) || !/[!@#$%&*?]/.test(contrasena)) {
             document.getElementById('password-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> La debe tener al menos 1 mayúscula, 1 minúscula, un dígito y un símbolo (!@#$%&*?)`
             password.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 password.classList.remove('is-invalid')
             }, 3500)
-        }
-
-        else if (confirm_contrasena !== contrasena){
+        } else if (confirm_contrasena !== contrasena) {
             document.getElementById('confirm-password-validation').innerHTML = `<i class="bi bi-exclamation-triangle"></i> Las contraseñas no coinciden`
             confirmPassword.classList.add('is-invalid')
 
-            setTimeout(function (){
+            setTimeout(function () {
                 confirmPassword.classList.remove('is-invalid')
             }, 3500)
-        }
-
-        else{
+        } else {
             //Se genera el avatar del usuario y se guarda con los demás datos.
             let user_avatar = createAvatar();
 
+            let guid = crypto.randomUUID()
+
             let user = {
-                name: nombre,
-                lastname: apellido,
+                guid: guid,
+                first_name: nombre,
+                last_name: apellido,
                 birthday: edad,
                 email: mail,
                 username: nombre_usuario,
                 address: direccion,
                 password: contrasena,
-                avatar: user_avatar
+                avatar: user_avatar,
+                role: "usuario"
             }
 
-            console.log(user)
+            let usuarios = JSON.parse(localStorage.getItem("usuarios"))
+
+            usuarios.add(user)
+
+            localStorage.setItem("usuarios", JSON.stringify(usuarios))
+
+            append_alert('Usuario creado con éxito', 'success')
         }
     })
-
 }

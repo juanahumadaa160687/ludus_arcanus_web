@@ -2,7 +2,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 #main-container{
     display: grid;
@@ -25,30 +25,35 @@ main{
 
 #products-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     justify-items: center;
-    align-items: center;
+    align-items: start;
     padding: 1rem;
 
-    &:hover .card:not(:hover){
-        filter: blur(3px);
-    }
 }
 
+a{
+    text-decoration: none;
+    color: var(--color-light-a0);
+}
 
 .card{
-    width: 312px;
-    background-color: var(--color-surface-a10);
+    width: 320px;
+    background-color: var(--color-surface-a0);
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     color: var(--color-light-a0);
 
-    &:hover{
-        transform: scale(1.5);
 
+    &:hover{
         -webkit-animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    img{
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
     }
 
     .card-body{
@@ -59,6 +64,7 @@ main{
             justify-content: end;
             align-items: center;
             width: 100%;
+            margin-bottom: 16px;
 
             .stock-normal{
                 background-color: rgba(125, 255, 149, 0.1);
@@ -83,10 +89,6 @@ main{
             font-size: var(--font-size-header);
             font-weight: var(--font-weight-header);
             font-family: var(--font-family-header), sans-serif;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
 
         .product-description{
@@ -100,62 +102,25 @@ main{
             overflow: hidden;
         }
 
-        a{
-            text-decoration: none;
-            color: var(--link-color);
-            margin-bottom: 4px;
+        .price{
+            margin-top: 0;
+            margin-bottom: 0;
+            font-weight: var(--font-weight-header);
+            font-size: 18px;
+        }
+        .old-price{
+            text-decoration: line-through;
+            margin-bottom: 0;
             font-size: var(--font-size-body);
             font-weight: var(--font-weight-body);
         }
-
-        a:hover{
-            color: var(--link-hover-color);
+        .descuento{
+            color: var(--color-success-a0);
+            font-size: var(--font-size-body);
+            font-weight: var(--font-weight-body);
+            margin: 0 0 0 10px;
         }
 
-        .card-footer{
-            border-top: 1px solid var(--color-light-a0);
-            background-color: var(--color-surface-a10);
-            margin-bottom: 0;
-            padding: 8px 0 0 0;
-
-            .price{
-                margin-top: 0;
-                margin-bottom: 0;
-                font-weight: var(--font-weight-subtitle);
-            }
-            .old-price{
-                text-decoration: line-through;
-                margin-bottom: 0;
-                font-size: var(--font-size-body);
-                font-weight: var(--font-weight-body);
-            }
-
-            .cta-button{
-                background-color: var(--cta-button-background);
-                color: var(--cta-button-color);
-                border: var(--cta-button-border);
-                padding: 0.4rem 2rem;
-                font-size: 16px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-                border-radius: 10px;
-
-                &:hover{
-                    background-color: var(--cta-button-hover-background);
-                    color: var(--cta-button-hover-color);
-                }
-            }
-
-            .disabled-button{
-                background-color: var(--cta-button-disabled-background);
-                color: var(--cta-button-disabled-color);
-                border: var(--cta-button-disabled-border);
-                padding: 0.4rem 2rem;
-                font-size: 16px;
-                cursor: not-allowed;
-                border-radius: 10px;
-            }
-        }
     }
 }
 
@@ -205,6 +170,7 @@ main{
         opacity: 1;
     }
 }
+
 
 @media screen and (max-width: 768px) {
     .products{

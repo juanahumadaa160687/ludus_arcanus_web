@@ -71,80 +71,82 @@
   </nav>
 </header>
 
-    <main>
-        <div class="d-flex justify-content-center align-items-center registro-content" id="hero">
+<main>
+  <div class="d-flex justify-content-center align-items-center registro-content" id="hero">
 
-            <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-column justify-content-start align-items-start lg:flex-row lg:justify-content-between" style="width: 100%">
-                    <h5 class="mb-5">Registro de Usuario</h5>
-                    <p>¿Ya tienes cuenta? <a href="#">Inicia Sesión</a></p>
-                  </div>
-                    <form class="row g-3" action="" id="sign-up-form" data-bs-validate novalidate>
-                        <div class="sign-container col-12 md:col-6">
-                          <label for="name">Nombre</label>
-                          <input type="text" id="name" class="form-control" aria-describedby="name-validation" />
-                          <div id="name-validation" class="invalid-feedback"></div>
-                        </div>
-                        <div class="sign-container col-12 md:col-6">
-                          <label for="lastname">Apellido</label>
-                          <input type="text" id="lastname" class="form-control" aria-describedby="lastname-validation" />
-                          <div id="lastname-validation" class="invalid-feedback">Este campo es obligatorio</div>
-                        </div>
-                        <div class="sign-container col-12 md:col-4">
-                          <label for="email">Correo Electrónico</label>
-                          <input type="email" id="email" class="form-control" aria-describedby="email-validation" />
-                          <div id="email-validation" class="invalid-feedback">Este campo es obligatorio</div>
-                        </div>
-                        <div class="sign-container col-12 md:col-4">
-                          <label for="username">Nombre de Usuario</label>
-                          <input type="text" id="username" class="form-control" aria-describedby="username-validation" />
-                          <div id="username-validation" class="invalid-feedback">Este campo es obligatorio</div>
-                        </div>
-                      <div class="sign-container col-12 md:col-4">
-                        <label for="birthday">Fecha de Nacimiento</label>
-                        <div class="form-control form-adorn">
-                          <div class="form-adorn-icon">
-                            <i class="bi bi-calendar3"></i>
-                          </div>
-                            <input type="text" id="birthday" class="form-ghost" data-bs-toggle="datepicker" autocomplete="off" placeholder="Seleccione una fecha..." aria-describedby="birthday-validation" />
-                        </div>
-                        <div id="birthday-validation" class="invalid-feedback"></div>
-                      </div>
-                        <div class="sign-container col-12">
-                          <label for="address">Dirección de Despacho</label>
-                          <input type="text" id="address" class="form-control"  />
-                          <div class="form-text">
-                            Opcional
-                          </div>
-                        </div>
-                        <div class="sign-container col-12 md:col-6">
-                          <label for="password">Contraseña</label>
-                          <input type="password" id="password" class="form-control" aria-describedby="password-validation" />
-                          <div id="password-validation" class="invalid-feedback"></div>
-                          <div class="strength" data-bs-strength>
-                            <div class="strength-segment"></div>
-                            <div class="strength-segment"></div>
-                            <div class="strength-segment"></div>
-                            <div class="strength-segment"></div>
-                          </div>
-                          <span class="strength-text"></span>
-                        </div>
-                        <div class="sign-container col-12 md:col-6">
-                          <label for="confirm-password">Confirmar Contraseña</label>
-                          <input type="password" id="confirm-password" class="form-control" aria-describedby="confirm-password-validation" />
-                          <div id="confirm-password-validation" class="invalid-feedback"></div>
-                        </div>
+    <div id="alert"></div>
 
-                        <div class="d-flex flex-column justify-content-center align-items-center lg:flex-row lg:justify-content-start" id="button-container">
-                            <button type="submit" class="sign-in-button" id="submit-button">Crear Cuenta</button>
-                            <button type="reset" class="clear-button">Limpiar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex flex-column justify-content-start align-items-start lg:flex-row lg:justify-content-between" style="width: 100%">
+          <h5 class="mb-5">Registro de Usuario</h5>
+          <p>¿Ya tienes cuenta? <a href="#">Inicia Sesión</a></p>
         </div>
-    </main>
+          <form class="row g-3" action="" id="sign-up-form" data-bs-validate novalidate>
+              <div class="sign-container col-12 md:col-6">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" class="form-control" aria-describedby="name-validation" />
+                <div id="name-validation" class="invalid-feedback"></div>
+              </div>
+              <div class="sign-container col-12 md:col-6">
+                <label for="lastname">Apellido</label>
+                <input type="text" id="lastname" class="form-control" aria-describedby="lastname-validation" />
+                <div id="lastname-validation" class="invalid-feedback">Este campo es obligatorio</div>
+              </div>
+              <div class="sign-container col-12 md:col-4">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" class="form-control" aria-describedby="email-validation" />
+                <div id="email-validation" class="invalid-feedback">Este campo es obligatorio</div>
+              </div>
+              <div class="sign-container col-12 md:col-4">
+                <label for="username">Nombre de Usuario</label>
+                <input type="text" id="username" class="form-control" aria-describedby="username-validation" />
+                <div id="username-validation" class="invalid-feedback">Este campo es obligatorio</div>
+              </div>
+            <div class="sign-container col-12 md:col-4">
+              <label for="birthday">Fecha de Nacimiento</label>
+              <div class="form-control form-adorn">
+                <div class="form-adorn-icon">
+                  <i class="bi bi-calendar3"></i>
+                </div>
+                  <input type="text" id="birthday" class="form-ghost" data-bs-toggle="datepicker" autocomplete="off" placeholder="Seleccione una fecha..." aria-describedby="birthday-validation" />
+              </div>
+              <div id="birthday-validation" class="invalid-feedback"></div>
+            </div>
+              <div class="sign-container col-12">
+                <label for="address">Dirección de Despacho</label>
+                <input type="text" id="address" class="form-control"  />
+                <div class="form-text">
+                  Opcional
+                </div>
+              </div>
+              <div class="sign-container col-12 md:col-6">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" class="form-control" aria-describedby="password-validation" />
+                <div id="password-validation" class="invalid-feedback"></div>
+                <div class="strength" data-bs-strength>
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                  <div class="strength-segment"></div>
+                </div>
+                <span class="strength-text"></span>
+              </div>
+              <div class="sign-container col-12 md:col-6">
+                <label for="confirm-password">Confirmar Contraseña</label>
+                <input type="password" id="confirm-password" class="form-control" aria-describedby="confirm-password-validation" />
+                <div id="confirm-password-validation" class="invalid-feedback"></div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-center align-items-center lg:flex-row lg:justify-content-start" id="button-container">
+                  <button type="submit" class="sign-in-button" id="submit-button">Crear Cuenta</button>
+                  <button type="reset" class="clear-button">Limpiar</button>
+              </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</main>
 
 <footer id="footer">
   <div id="footer-content" class="row d-flex flex-column md:flex-row">
@@ -170,7 +172,6 @@
       </ul>
     </div>
   </div>
-
   <p id="copyright-year"></p>
 </footer>
 

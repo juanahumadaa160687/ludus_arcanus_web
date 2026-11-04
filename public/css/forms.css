@@ -160,3 +160,22 @@
     }
 
 }
+
+#alert{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 25%;
+
+    i{
+        font-size: var(--font-size-body);
+    }
+
+    #alert-container{
+       width: 100%;
+    }
+}
+
