@@ -7,14 +7,12 @@ function setCopyrightYear() {
         copyrightYear.innerText = `© ${year} - Ludus Arcanus. Todos los derechos reservados.`;
     }
 }
-
 setCopyrightYear();
-
 
 //Add active class to the current button (highlight it)
 const link = window.location.href.split('/').pop().split('.')[0];
 
-const links = ["index", "juegos-mesa", "juegos-cartas", "juegos-rol", "accesorios", "terminos", "privacidad", "condiciones_envio", "sign-in", "sign-up", "carrito", "user-profile", "detalle_producto", "preventas", "ofertas"];
+const links = ["index", "juegos-mesa", "juegos-cartas", "juegos-rol", "accesorios", "terminos", "privacidad", "condiciones_envio", "sign-in", "sign-up", "carrito", "user-profile"];
 
 function setActiveLink() {
 
@@ -43,5 +41,32 @@ function setActiveLink() {
 
 setActiveLink();
 
+/*Modificar navbar con usuario conectado
+let user_avatar = document.getElementById('user-avatar')
+let logout = document.getElementById('log-out')
+let sign_in = document.getElementById('log-in')
+let sign_up = document.getElementById('sign-up')
 
+let usuario = JSON.parse(sessionStorage.getItem('usuario'))
 
+if (usuario !== null){
+    user_avatar.innerHTML = `<a class="nav-link" aria-current="page" href="user-profile.html"><span class="avatar"><img class="avatar-img" src="${usuario.avatar_img}" alt="avatar del usuario"></span> ${usuario.first_name + ' ' + usuario.last_name}</a>`
+    user_avatar.classList.remove('d-none')
+    logout.innerHTML = `<a class="nav-link" aria-current="page" href="" id="logout-link">Cerrar Sesión</a>`
+    logout.classList.remove('d-none')
+    sign_in.classList.add('d-none')
+    sign_up.classList.add('d-none')
+}
+
+let logout_link = document.getElementById('logout-link')
+logout_link.addEventListener('click', function (){
+    sessionStorage.clear()
+    user_avatar.classList.add('d-none')
+    logout.classList.add('d-none')
+    sign_in.classList.remove('d-none')
+    sign_up.classList.remove('d-none')
+
+    window.location.href='index.html'
+})
+
+ */

@@ -6,12 +6,22 @@ main{
 }
 #main-container{
     display: grid;
-    grid-template-rows: auto auto auto 1fr;
+    grid-template-rows: auto auto auto auto;
     gap: 1rem;
     justify-items: center;
     align-items: center;
     padding: 1rem;
     margin: 2rem;
+
+    h1{
+        font-size: var(--font-size-title);
+        font-weight: var(--font-weight-title);
+    }
+
+    h5{
+        font-size: var(--font-size-subtitle);
+        font-weight: var(--font-weight-subtitle);
+    }
 }
 
 #carousel-container{
@@ -174,8 +184,7 @@ a{
 
 @media screen and (max-width: 768px) {
     .products{
-        grid-template-columns: auto auto;
-
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         .product{
             width: 18rem;
         }
@@ -190,7 +199,8 @@ a{
             width: 18rem;
         }
     }
-    #footer-content{
-        grid-template-columns: auto;
+
+    #main-container{
+        margin: 0.1rem;
     }
 }

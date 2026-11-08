@@ -5,17 +5,16 @@
     --color-dark-a0: #000000;
 
     /** Colores primarios del tema */
-    --color-primary-a10: #2dfee9;
-    --color-primary-a20: #8efff0;
+    --color-primary-a10: #e0e0e0;
+    --color-primary-a20: #e3e3e3;
 
     /** Color de acento del tema */
     --color-accent-a10: #ff8f4b;
     --color-accent-a20: #ffa978;
 
     /** Colores de superficie del tema */
-    --color-surface-a0: #141414;
-    --color-surface-a10: #272727;
-    --color-surface-a20: #3b3b3b;
+    --color-surface-a0: #222526;
+    --color-surface-a10: #444747;
 
     /** Colores de éxito */
     --color-success-a0: #7dff95;
@@ -30,33 +29,33 @@
     --color-info-a0: #87d1ff;
 
     /** Botones CTA */
-    --cta-button-background: rgba(254, 143, 75, 0.2);
+    --cta-button-background: rgba(254, 143, 75, 0.1);
     --cta-button-color: #ff8f4b;
     --cta-button-border: 1px solid #ff8f4b;
 
     /** Botones CTA deshabilitados */
     --cta-button-disabled-background: rgba(125, 125, 125, 0.1);
-    --cta-button-disabled-color: var(--color-light-a0);
-    --cta-button-disabled-border: 1px solid var(--color-light-a0);
+    --cta-button-disabled-color: #FFF;
+    --cta-button-disabled-border: 1px solid #FFF;
 
     /** Botones CTA hover */
     --cta-button-hover-background: #ff8f4b;
-    --cta-button-hover-color: var(--color-light-a0);
+    --cta-button-hover-color: #222526;
 
     /** Botones primarios */
-    --primary-button-background: rgba(45, 254, 233, 0.1);
-    --primary-button-color: #2dfee9;
-    --primary-button-border: 1px solid #2dfee9;
+    --primary-button-background: rgba(224, 224, 224, 0.1);
+    --primary-button-color: #e0e0e0;
+    --primary-button-border: 1px solid #e0e0e0;
 
     /** Botones primarios hover */
-    --primary-button-hover-background: #2dfee9;
-    --primary-button-hover-color: #000;
+    --primary-button-hover-background: #e0e0e0;
+    --primary-button-hover-color: #222526;
 
     /** Links */
-    --link-color: #2dfee9;
+    --link-color: #e0e0e0;
 
     /** Links hover */
-    --link-hover-color: #FFF;
+    --link-hover-color: #ff8f4b;
 
     /** Fuentes */
     --font-size-hero: 48px;
@@ -83,8 +82,8 @@
 
 body{
     background-color: var(--color-surface-a0);
-    color: var(--color-light-a0);
-    font-family: 'Roboto', sans-serif;
+    color: var(--color-primary-a10);
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100dvh;
@@ -102,7 +101,7 @@ body{
 
 
     .navbar-toggler-icon{
-        color: #2dfee9;
+        color: var(--color-primary-a10);
     }
 
     #nav-brand{
@@ -158,18 +157,18 @@ body{
         }
 
         #btn-signup{
-            background-color: var(--primary-button-background);
-            color: var(--primary-button-color);
-            border: var(--primary-button-border);
+            background-color: transparent;
+            color: var(--cta-button-color);
+            border: var(--cta-button-border);
             padding: 0.5rem 1rem;
-            font-size: 1rem;
-            cursor: pointer;
             transition: background-color 0.3s;
             border-radius: 10px;
+            text-decoration: none;
+            font-weight: normal;
 
             &:hover{
-                background-color: var(--primary-button-hover-background);
-                color: var(--color-dark-a0);
+                background-color: var(--cta-button-hover-background);
+                color: var(--color-surface-a0);
             }
         }
     }
@@ -188,9 +187,10 @@ body{
     }
 
     #dropdown-menu{
-        background-color: rgba(20, 20, 20, 0.9);
-        border: 1px solid var(--color-primary-a10);
-        border-radius: 5px;
+        background-color: rgba(34, 37, 38, 0.7);
+        border: none;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
         margin-top: 0.5rem;
         position: absolute;
         z-index: 1000;
@@ -255,9 +255,9 @@ body{
     }
 
     .cta-button{
-        background-color: var(--cta-button-background);
-        color: var(--cta-button-color);
-        border: var(--cta-button-border);
+        background-color: var(--primary-button-background);
+        color: var(--primary-button-color);
+        border: var(--primary-button-border);
         padding: 0.8rem 2.5rem;
         font-size: 1rem;
         cursor: pointer;
@@ -267,8 +267,8 @@ body{
     }
 
     .cta-button:hover{
-        background-color: var(--cta-button-hover-background);
-        color: var(--color-light-a0);
+        background-color: var(--primary-button-hover-background);
+        color: var(--color-surface-a0);
     }
 
     p{
@@ -309,6 +309,9 @@ body{
 
     #footer-content{
         width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
 
         #logo-footer{
             display: flex;
@@ -406,11 +409,11 @@ body{
 }
 
 #navbarDrawer{
-    background-color: #3b3b3b;
+    background-color: var(--color-surface-a10);
 }
 
 .drawer-header{
-    color: #2dfee9;
+    color: var(--color-primary-a10);
 }
 
 @media (max-width: 786px){
@@ -426,4 +429,6 @@ body{
         align-items: center;
         padding: 5px
     }
+
 }
+

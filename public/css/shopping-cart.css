@@ -1,0 +1,39 @@
+#cart-container{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+#cart-products{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.item{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+}
+
+img{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+h5{
+    font-size: var(--font-size-header);
+    font-weight: var(--font-weight-header);
+}
+
+.precio{
+    font-size: var(--font-size-header);
+    font-weight: var(--font-weight-header);
+}
+
+.resumen-compra{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+}

@@ -415,3 +415,6 @@ let products = [
     }
 ]
 
+localStorage.setItem("usuarios", JSON.stringify(users))
+
+localStorage.setItem("productos", JSON.stringify(products))
