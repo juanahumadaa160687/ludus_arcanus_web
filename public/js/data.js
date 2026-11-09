@@ -486,48 +486,7 @@ let cities = [
     }
 ]
 
-let test_carrito = [{
-    "guid_producto": "e3c4e426-0956-4763-b6de-1ce6d5356dcf",
-    "nombre_producto": "Ultra Pro: Protector Cartas G.I. Joe Hero",
-    "imagen_producto": "protector_gijoe.webp",
-    "categoria_producto": "accesorios",
-    "precio_producto": 9990,
-    "descuento_producto": 10
-},
-    {
-        "guid_producto": "e3c4e426-0956-4763-b6de-1ce6d5356dcf",
-        "nombre_producto": "Ultra Pro: Protector Cartas G.I. Joe Hero",
-        "imagen_producto": "protector_gijoe.webp",
-        "categoria_producto": "accesorios",
-        "precio_producto": 9990,
-        "descuento_producto": 10
-    },
-    {
-        "guid_producto": "e3c4e426-0956-4763-b6de-1ce6d5356dcf",
-        "nombre_producto": "Ultra Pro: Protector Cartas G.I. Joe Hero",
-        "imagen_producto": "protector_gijoe.webp",
-        "categoria_producto": "accesorios",
-        "precio_producto": 9990,
-        "descuento_producto": 10
-    }
-]
-
-let test_user =
-    {
-        "guid": "e44e2ed9-df4b-427a-9620-aa3caa2e1b0c",
-        "first_name": "Clayborne",
-        "last_name": "Kinghorne",
-        "email": "ckinghorne0@wired.com",
-        "birthday": "22/09/1999",
-        "address": "2988 Melvin Way",
-        "username": "ckinghorne0",
-        "password": "iH8+W@~7wD",
-        "role": "usuario",
-        "avatar_img": "https://api.dicebear.com/10.x/pixelbot/svg?tags=animation&seed=e44e2ed9"
-    }
-
-sessionStorage.setItem("usuario", JSON.stringify(test_user))
-sessionStorage.setItem("carrito", JSON.stringify(test_carrito))
+sessionStorage.clear()
 
 localStorage.setItem("usuarios", JSON.stringify(users))
 

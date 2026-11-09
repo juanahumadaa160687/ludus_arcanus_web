@@ -61,7 +61,8 @@ menu_comuna.innerHTML = comuna_selected.map(function(currentValue) {
 
 let items = JSON.parse(sessionStorage.getItem("carrito"))
 
-let item_container = document.getElementById("item-container")
+let nombre_container = document.getElementById("nombre-producto")
+let precio_container = document.getElementById("precio-producto")
 
 let precio_total = 0
 for(let item in items){
@@ -69,25 +70,29 @@ for(let item in items){
     precio_total += precio_descuento
 }
 
-item_container.innerHTML = items.map(item => {
+nombre_container.innerHTML = items.map(item => {
     return `
-      <li class="list-group-item d-flex justify-content-start align-items-center">
+      <tr>
+      <td class="d-flex justify-content-start align-items-center">
         <img class="rounded-circle me-2" src="img/${item.categoria_producto}/${item.imagen_producto}" alt="">
-        <div class="d-flex justify-content-between align-items-center w-100 m-0 p-0">
-          <p class="m-0">${item.nombre_producto}</p>
-          <p class="m-0">${currency_format.format(item.precio_producto - item.precio_producto * item.descuento_producto/100)}</p>
-          <a type="button" class="delete-button"><i class="bi bi-trash3"></i></a>
-        </div>
-       </li>
+        <p class="m-0">${item.nombre_producto}</p>
+      </td>
+      <td>
+        <p class="m-0">${currency_format.format(item.precio_producto - item.precio_producto * item.descuento_producto/100)}</p>
+      </td>
+      <td>
+        <a type="button"><i class="bi bi-trash3"></i></a>
+      </td>
+      </tr>
     `
-})
+}).join('')
 
 
 let subtotal = document.getElementById("subtotal")
 
 subtotal.innerHTML = `
     <td>Subtotal</td>
-    <td class="d-flex justify-content-end">${currency_format.format(precio_total)}</td>
+    <td class="text-end">${currency_format.format(precio_total)}</td>
 `
 let valor = 0
 
@@ -100,23 +105,23 @@ radios.forEach(radio => {
 
         if (e.target.value === 'bluexpress'){
             valor = 9000
-            envio.innerHTML = `<td>Envío</td><td class="d-flex justify-content-end">${currency_format.format(valor)}</td>`
+            envio.innerHTML = `<td>Envío</td><td class="text-end">${currency_format.format(valor)}</td>`
         }else if (e.target.value === 'chilexpress'){
             valor = 10500
-            envio.innerHTML = `<td>Envío</td><td class="d-flex justify-content-end">${currency_format.format(valor)}</td>`
+            envio.innerHTML = `<td>Envío</td><td class="text-end">${currency_format.format(valor)}</td>`
         }else if (e.target.value === 'starken'){
             valor = 7500
-            envio.innerHTML = `<td>Envío</td><td class="d-flex justify-content-end">${currency_format.format(valor)}</td>`
+            envio.innerHTML = `<td>Envío</td><td class="text-end">${currency_format.format(valor)}</td>`
         }else if (e.target.value === 'retiro'){
             valor = 0
-            envio.innerHTML = `<td>Envío</td><td class="d-flex justify-content-end">${currency_format.format(valor)}</td>`
+            envio.innerHTML = `<td>Envío</td><td class="text-end">${currency_format.format(valor)}</td>`
         }
 
         let total_container = document.getElementById('total')
 
         total_container.innerHTML = `
-            <td id="total-header"><strong>Total</strong></td>
-            <td class="d-flex justify-content-end" id="precio-total">${currency_format.format(precio_total + valor)}</td>
+            <td id="total-header m-0"><strong>Total</strong></td>
+            <td class="text-end" id="precio-total">${currency_format.format(precio_total + valor)}</td>
         `
     })
 })

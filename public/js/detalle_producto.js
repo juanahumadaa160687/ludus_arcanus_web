@@ -41,7 +41,7 @@ desc_prod.innerHTML = `<p>${detalle_producto.description}</p>`
 
 if (detalle_producto.stock === 0){
     stock_prod.innerHTML = `<p>Sin stock disponible</p>`
-    buttons_container.innerHTML = `<button class="disabled-button" id="carrito"><i class="bi bi-cart4"></i> Agregar al carrito</button>`
+    buttons_container.innerHTML = `<button class="disabled-button" id=""><i class="bi bi-cart4"></i> Agregar al carrito</button>`
 }else if (detalle_producto.stock === 1)  {
     stock_prod.innerHTML = `<p>Stock disponible: ${detalle_producto.stock} unidad</p>`
     buttons_container.innerHTML = `<button class="cart-button" id="carrito"><i class="bi bi-cart4"></i> Agregar al carrito</button>`
