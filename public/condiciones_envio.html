@@ -32,53 +32,56 @@
 <body>
 
 <header>
-  <nav class="navbar md:navbar-expand sticky-top" id="navbar">
-    <div class="container-fluid">
-      <img src="img/logo_ludus.png" alt="Ludus Arcanus Logo" width="65" height="40" class="d-inline-block align-text-top me-2">
-      <a class="navbar-brand" href="index.html" id="nav-brand">Ludus Arcanus Store</a>
-      <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" aria-hidden="true"></span>
-      </button>
-      <dialog class="drawer drawer-end" tabindex="-1" id="navbarDrawer" aria-labelledby="navbarDrawerLabel">
-        <div class="drawer-header">
-          <h5 class="drawer-title" id="navbarDrawerLabel">Ludus Arcanus Store</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+    <nav class="navbar md:navbar-expand sticky-top" id="navbar">
+        <div class="container-fluid">
+            <img src="img/logo_ludus.png" alt="Ludus Arcanus Logo" width="65" height="40" class="d-inline-block align-text-top me-2">
+            <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+            <dialog class="drawer drawer-end" tabindex="-1" id="navbarDrawer" aria-labelledby="navbarDrawerLabel">
+                <div class="drawer-header">
+                    <h5 class="drawer-title" id="navbarDrawerLabel">Ludus Arcanus Store</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+                </div>
+                <div class="drawer-body mb-2 md:mb-0">
+                    <ul class="nav flex-column lg:flex-row lg:justify-content-end flex-grow-1 me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false" id="dropdownMenuButton">
+                                <span id="dropdownMenuLabel">Tienda <i class="bi bi-caret-down-fill"></i></span>
+                            </button>
+                            <div class="menu" id="dropdown-menu">
+                                <a class="menu-item" aria-current="page" href="juegos-mesa.html">Juegos de Mesa</a>
+                                <hr class="menu-divider">
+                                <a class="menu-item" aria-current="page" href="juegos-cartas.html">Juegos de Cartas</a>
+                                <hr class="menu-divider">
+                                <a class="menu-item" aria-current="page" href="juegos-rol.html">Juegos de Rol</a>
+                                <hr class="menu-divider">
+                                <a class="menu-item" aria-current="page" href="accesorios.html">Accesorios</a>
+                            </div>
+                        </li>
+                        <li class="nav-item d-none" id="user-avatar">
+
+                        </li>
+                        <li class="nav-item d-none" id="shopping-cart">
+                            <a class="nav-link" aria-current="page" href="carrito.html"><i class="bi bi-cart4"></i></a>
+                        </li>
+                        <li class="nav-item d-none" id="log-out">
+
+                        </li>
+                        <li class="nav-item" id="log-in">
+                            <a class="nav-link" aria-current="page" href="sign-in.html">Ingresar</a>
+                        </li>
+                        <li class="nav-item" id="sign-up">
+                            <a class="nav-link" id="btn-signup" aria-current="page" href="sign-up.html">Registrate</a>
+                        </li>
+                    </ul>
+                </div>
+            </dialog>
         </div>
-        <div class="drawer-body mb-2 md:mb-0">
-          <ul class="nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false" id="dropdownMenuButton">
-                <span id="dropdownMenuLabel">Tienda <i class="bi bi-caret-down-fill"></i></span>
-              </button>
-              <div class="menu" id="dropdown-menu">
-                <a class="menu-item" aria-current="page" href="juegos-mesa.html">Juegos de Mesa</a>
-                <hr class="menu-divider">
-                <a class="menu-item" aria-current="page" href="juegos-cartas.html">Juegos de Cartas</a>
-                <hr class="menu-divider">
-                <a class="menu-item" aria-current="page" href="juegos-rol.html">Juegos de Rol</a>
-                <hr class="menu-divider">
-                <a class="menu-item" aria-current="page" href="accesorios.html">Accesorios</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <span class="avatar">
-                <img src="" alt="user-avatar" class="avatar-img" id="img-user-avatar">
-              </span>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="sign-in.html">Ingresar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="btn-signup" aria-current="page" href="sign-up.html">Registrate</a>
-            </li>
-          </ul>
-        </div>
-      </dialog>
-    </div>
-  </nav>
+    </nav>
 </header>
 
   <main>
@@ -111,7 +114,7 @@
 
           <ul>
               <li class="condiciones-text">Blue Express: lunes a viernes.</li>
-              <li class="condiciones-text">Correos de Chile: lunes, miércoles y viernes.</li>
+              <li class="condiciones-text">Chilexpress: lunes, miércoles y viernes.</li>
               <li class="condiciones-text">Starken: martes, jueves y viernes.</li>
           </ul>
           <p class="condiciones-text">
@@ -120,7 +123,7 @@
           </p>
           <ul>
               <li class="condiciones-text">Blue Express: 2 a 4 días hábiles.</li>
-              <li class="condiciones-text">Correos de Chile: 1 a 3 días hábiles</li>
+              <li class="condiciones-text">Chilexpress: 1 a 3 días hábiles</li>
               <li class="condiciones-text">Starken: 3 a 7 días hábiles.</li>
           </ul>
 
@@ -140,32 +143,32 @@
   </main>
 
 <footer id="footer">
-  <div id="footer-content">
-    <div id="logo-footer">
-      <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" class="logo-footer-img">
-    </div>
-    <div class="links-content">
-      <div class="links-footer">
-        <ul>
-          <li><a href="index.html" class="footer-link">Home</a></li>
-          <li><a href="terminos.html" class="footer-link">Términos y Condiciones</a></li>
-          <li><a href="privacidad.html" class="footer-link">Política de Privacidad</a></li>
-          <li><a href="condiciones_envio.html" class="footer-link">Condiciones de Envío</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="social-footer">
-      <ul>
-        <li><i class="bi bi-geo-alt"></i> <p>Calle Falsa 123, Iquique, Chile</p></li>
-        <li><i class="bi bi-telephone"></i> <p>+56 9 6567 890</p></li>
-        <li><i class="bi bi-envelope"></i> <p>ludus_arcanus@example.com</p></li>
-        <li><a href="#" class="icon"><i class="bi bi-instagram"></i></a> <a href="#" class="icon"><i class="bi bi-twitter-x"></i></a> <a href="#" class="icon"><i class="bi bi-facebook"></i></a></li>
+    <div id="footer-content" class="">
+        <div id="logo-footer">
+            <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" class="logo-footer-img">
+        </div>
+        <div class="links-content">
+            <div class="links-footer">
+                <ul>
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="terminos.html" class="footer-link">Términos y Condiciones</a></li>
+                    <li><a href="privacidad.html" class="footer-link">Política de Privacidad</a></li>
+                    <li><a href="condiciones_envio.html" class="footer-link">Condiciones de Envío</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-footer">
+            <ul>
+                <li><i class="bi bi-geo-alt"></i> <p>Calle Falsa 123, Iquique, Chile</p></li>
+                <li><i class="bi bi-telephone"></i> <p>+56 9 6567 890</p></li>
+                <li><i class="bi bi-envelope"></i> <p>ludus_arcanus@example.com</p></li>
+                <li><a href="#" class="icon"><i class="bi bi-instagram"></i></a> <a href="#" class="icon"><i class="bi bi-twitter-x"></i></a> <a href="#" class="icon"><i class="bi bi-facebook"></i></a></li>
 
-      </ul>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <p id="copyright-year"></p>
+    <p id="copyright-year"></p>
 </footer>
 
 <!-- Enlace al archivo JavaScript -->

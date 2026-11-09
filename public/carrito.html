@@ -33,7 +33,7 @@
 <header>
   <nav class="navbar md:navbar-expand sticky-top md:fixed-top" id="navbar">
     <div class="container-fluid">
-      <img src="img/logo_ludus.png" alt="Ludus Arcanus Logo" width="65" height="40" class="d-inline-block align-text-top me-2">
+      <img src="img/logo_ludus.png" alt="Ludus Arcanus Logo" class="d-inline-block align-text-top me-2">
       <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" aria-hidden="true"></span>
       </button>
@@ -43,7 +43,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
         </div>
         <div class="drawer-body mb-2 md:mb-0">
-          <ul class="nav flex-column md:flex-row md:justify-content-end flex-grow-1 me-auto">
+          <ul class="nav flex-column lg:flex-row lg:justify-content-end flex-grow-1 me-auto">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="index.html">Home</a>
             </li>
@@ -63,7 +63,12 @@
             <li class="nav-item d-none" id="user-avatar">
             </li>
             <li class="nav-item d-none" id="shopping-cart">
-              <a class="nav-link" aria-current="page" href="carrito.html"><i class="bi bi-cart4"></i></a>
+              <a class="nav-link position-relative" aria-current="page" href="carrito.html">
+                <i class="bi bi-cart4"></i>
+                <span class="position-absolute top-25 start-100 translate-middle p-2 bg-danger border border-bg rounded-circle">
+                  <span class="visually-hidden">items en carrito</span>
+                </span>
+              </a>
             </li>
             <li class="nav-item d-none" id="log-out">
             </li>
@@ -81,55 +86,125 @@
 </header>
 
 <main>
-  <div id="cart-container" class="container-fluid">
+  <div class="row p-5" id="cart-container">
+    <div class="col-12 p-5"><h2>Checkout</h2></div>
+    <div class="col-12 lg:col">
+      <div class="accordion accordion-flush">
+        <details class="accordion-item" open>
+          <summary class="accordion-header">
+            Dirección de despacho
+            <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
+          </summary>
+          <div class="accordion-body">
+            <form action="" class="row g-3">
+              <div class="col-12 mb-3" id="container-name">
 
-    <div id="cart-products" class="container-fluid">
-      <div class="item d-flex justify-content-start align-items-center">
-        <div class="img-fluid">
-          <img class="" src="img/juegos-mesa/monopoly_pkm.webp" alt="">
-        </div>
-        <div class="d-flex justify-content-between align-items-end w-100">
-          <div class="">
-            <h5 class="">Monopoly Pokemon</h5>
-            <p class="">Hasbro</p>
+              </div>
+              <div class="col-12 mb-3" id="container-address">
+
+              </div>
+              <div class="col-12 mb-3">
+                <label for="select-region">Selecciona tu región</label>
+                <select name="region" id="select-region">
+
+                </select>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="select-comuna">Selecciona tu comuna</label>
+                <select name="comuna" id="select-comuna">
+
+                </select>
+              </div>
+            </form>
           </div>
-          <div class="">
-            <p class="precio">$ 122.222</p>
+        </details>
+        <details class="accordion-item" name="accordionExample">
+          <summary class="accordion-header">
+            Método de Envío
+            <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
+          </summary>
+          <div class="accordion-body">
+            <form action="" id="envio-form">
+              <div class="form-field">
+                <input type="radio" id="bluexpress" class="radio" name="opcion" value="bluexpress" />
+                <div class="form-field-content">
+                  <label for="bluexpress" class="fw-medium">Bluexpress</label>
+                  <small class="form-text">2 a 4 días hábiles. $9.000</small>
+                </div>
+              </div>
+              <div class="form-field">
+                <input type="radio" id="chilexpress" class="radio" name="opcion" value="chilexpress" />
+                <div class="form-field-content">
+                  <label for="chilexpress" class="fw-medium">Chilexpress</label>
+                  <small class="form-text">1 a 3 días hábiles. $10.500</small>
+                </div>
+              </div>
+              <div class="form-field">
+                <input type="radio" id="starken" class="radio" name="opcion" value="starken" />
+                <div class="form-field-content">
+                  <label for="starken" class="fw-medium">Starken</label>
+                  <small class="form-text">3 a 7 días hábiles. $7.500</small>
+                </div>
+              </div>
+              <div class="form-field">
+                <input type="radio" id="retiro" class="radio" name="opcion" value="retiro" />
+                <div class="form-field-content">
+                  <label for="retiro" class="fw-medium">Retiro en Tienda</label>
+                  <small class="form-text">Gratis</small>
+                </div>
+              </div>
+            </form>
           </div>
-        </div>
+        </details>
       </div>
     </div>
 
-    <div id="resumen-compra" class="">
-      <div class="d-flex justify-content-start align-items-center">
-        <h5>
-          Resumen de Compra
-        </h5>
+    <div class="col-12 lg:col" id="carrito-container">
+      <h5>Tu Carrito</h5>
+      <ul class="list-group list-group-flush" id="item-container"></ul>
+    </div>
+
+    <div class="col-12 lg:col">
+      <div class="accordion accordion-flush">
+        <details class="accordion-item" name="accordionExample">
+          <summary class="accordion-header">
+            Método de Pago
+            <svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>
+          </summary>
+          <div class="accordion-body">
+            <form action="" id="pago-form">
+              <div class="form-field mb-3">
+                <input class="radio" name="radios" type="radio" id="radioTarjeta" />
+                <label for="radioTarjeta">Webpay</label>
+              </div>
+              <div class="form-field">
+                <input class="radio" name="radios" type="radio" id="radioTransferencia" />
+                <label for="radioTransferencia">Transferencia Bancaria</label>
+              </div>
+            </form>
+          </div>
+        </details>
       </div>
-      <div class="d-flex justify-content-between align-items-center">
-        <p>Subtotal</p>
-        <p>$122.222</p>
-      </div>
-      <div class="d-flex justify-content-between align-items-center">
-        <p>Descuento</p>
-        <p>20%</p>
-      </div>
-      <div class="d-flex justify-content-between align-items-center">
-        <p>Total</p>
-        <p>$33.333</p>
-      </div>
-      <div class="d-flex justify-content-between align-items-center">
-        <p>Total</p>
-        <p>$33.333</p>
+
+      <table class="table table-card table-borderless">
+        <tbody>
+          <tr id="subtotal"></tr>
+          <tr id="envio"></tr>
+          <tr id="total"></tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-end align-items-center" id="button-pay">
+        <button class="disabled-button">Pagar</button>
       </div>
     </div>
+
   </div>
 </main>
 
 <footer id="footer">
-  <div id="footer-content">
-    <div id="logo-footer">
-      <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" class="logo-footer-img">
+  <div id="footer-content" class="">
+    <div class="" id="logo-footer">
+      <img src="img/logo_ludus.png" alt="Logo de Ludus Arcanus" class="img-fluid">
     </div>
     <div class="links-content">
       <div class="links-footer">
@@ -147,19 +222,15 @@
         <li><i class="bi bi-telephone"></i> <p>+56 9 6567 890</p></li>
         <li><i class="bi bi-envelope"></i> <p>ludus_arcanus@example.com</p></li>
         <li><a href="#" class="icon"><i class="bi bi-instagram"></i></a> <a href="#" class="icon"><i class="bi bi-twitter-x"></i></a> <a href="#" class="icon"><i class="bi bi-facebook"></i></a></li>
-
       </ul>
     </div>
   </div>
-
   <p id="copyright-year"></p>
 </footer>
 
 <!-- Enlace al archivo JavaScript -->
 <script type="module" src="js/main.js"></script>
-
-<script type="module" src="js/avatar_creator.js"></script>
-<script src="js/data.js"></script>
+<script type="module" src="js/shopping-cart.js"></script>
 
 <!-- Bootstrap JS (opcional) -->
 <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>

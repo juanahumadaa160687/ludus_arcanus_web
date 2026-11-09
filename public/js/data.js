@@ -365,7 +365,7 @@ let products = [
         "brand": "",
         "stock": 10,
         "price": 9990,
-        "sale": false,
+        "sale": true,
         "discount": 10,
         "image": "protector_gijoe.webp"
     }, {
@@ -415,6 +415,105 @@ let products = [
     }
 ]
 
+let cities = [
+    {
+        "region": "Selecciona tu Región",
+        "comunas": []
+    },
+    {
+        "region": "Arica y Parinacota",
+        "comunas": ["Selecciona tu ciudad", "Arica", "Camarones", "Putre", "General Lagos"]
+    },
+    {
+        "region": "Tarapacá",
+        "comunas": ["Selecciona tu ciudad", "Iquique", "Alto Hospicio", "Pozo Almonte", "Camiña", "Colchane", "Huara", "Pica"]
+    },
+    {
+        "region": "Antofagasta",
+        "comunas": ["Selecciona tu ciudad", "Antofagasta", "Mejillones", "Sierra Gorda", "Taltal", "Calama", "Ollagüe", "San Pedro de Atacama", "Tocopilla", "María Elena"]
+    },
+    {
+        "region": "Atacama",
+        "comunas": ["Selecciona tu ciudad", "Copiapó", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco"]
+    },
+    {
+        "region": "Coquimbo",
+        "comunas": ["Selecciona tu ciudad", "La Serena", "Coquimbo", "Andacollo", "La Higuera", "Paiguano", "Vicuña", "Illapel", "Canela", "Los Vilos", "Salamanca", "Ovalle", "Combarbalá", "Monte Patria", "Punitaqui", "Río Hurtado"]
+    },
+    {
+        "region": "Valparaíso",
+        "comunas": ["Selecciona tu ciudad", "Valparaíso", "Casablanca", "Concón", "Juan Fernández", "Puchuncaví", "Quintero", "Viña del Mar", "Isla de Pascua", "Los Andes", "Calle Larga", "Rinconada", "San Esteban", "La Ligua", "Cabildo", "Papudo", "Petorca", "Zapallar", "Quillota", "Calera", "Hijuelas", "La Cruz", "Nogales", "San Antonio", "Algarrobo", "Cartagena", "El Quisco", "El Tabo", "Santo Domingo", "San Felipe", "Catemu", "Llaillay", "Panquehue", "Putaendo", "Santa María", "Quilpué", "Limache", "Olmué", "Villa Alemana"]
+    },
+    {
+        "region": "Región del Libertador Gral. Bernardo O’Higgins",
+        "comunas": ["Selecciona tu ciudad", "Rancagua", "Codegua", "Coinco", "Coltauco", "Doñihue", "Graneros", "Las Cabras", "Machalí", "Malloa", "Mostazal", "Olivar", "Peumo", "Pichidegua", "Quinta de Tilcoco", "Rengo", "Requínoa", "San Vicente", "Pichilemu", "La Estrella", "Litueche", "Marchihue", "Navidad", "Paredones", "San Fernando", "Chépica", "Chimbarongo", "Lolol", "Nancagua", "Palmilla", "Peralillo", "Placilla", "Pumanque", "Santa Cruz"]
+    },
+    {
+        "region": "Región del Maule",
+        "comunas": ["Selecciona tu ciudad", "Talca", "Constitución", "Curepto", "Empedrado", "Maule", "Pelarco", "Pencahue", "Río Claro", "San Clemente", "San Rafael", "Cauquenes", "Chanco", "Pelluhue", "Curicó", "Hualañé", "Licantén", "Molina", "Rauco", "Romeral", "Sagrada Familia", "Teno", "Vichuquén", "Linares", "Colbún", "Longaví", "Parral", "Retiro", "San Javier", "Villa Alegre", "Yerbas Buenas"]
+    },
+    {
+        "region": "Región de Ñuble",
+        "comunas": ["Selecciona tu ciudad", "Cobquecura", "Coelemu", "Ninhue", "Portezuelo", "Quirihue", "Ránquil", "Treguaco", "Bulnes", "Chillán Viejo", "Chillán", "El Carmen", "Pemuco", "Pinto", "Quillón", "San Ignacio", "Yungay", "Coihueco", "Ñiquén", "San Carlos", "San Fabián", "San Nicolás"]
+    },
+    {
+        "region": "Región del Biobío",
+        "comunas": ["Selecciona tu ciudad", "Concepción", "Coronel", "Chiguayante", "Florida", "Hualqui", "Lota", "Penco", "San Pedro de la Paz", "Santa Juana", "Talcahuano", "Tomé", "Hualpén", "Lebu", "Arauco", "Cañete", "Contulmo", "Curanilahue", "Los Álamos", "Tirúa", "Los Ángeles", "Antuco", "Cabrero", "Laja", "Mulchén", "Nacimiento", "Negrete", "Quilaco", "Quilleco", "San Rosendo", "Santa Bárbara", "Tucapel", "Yumbel", "Alto Biobío"]
+    },
+    {
+        "region": "Región de la Araucanía",
+        "comunas": ["Selecciona tu ciudad", "Temuco", "Carahue", "Cunco", "Curarrehue", "Freire", "Galvarino", "Gorbea", "Lautaro", "Loncoche", "Melipeuco", "Nueva Imperial", "Padre las Casas", "Perquenco", "Pitrufquén", "Pucón", "Saavedra", "Teodoro Schmidt", "Toltén", "Vilcún", "Villarrica", "Cholchol", "Angol", "Collipulli", "Curacautín", "Ercilla", "Lonquimay", "Los Sauces", "Lumaco", "Purén", "Renaico", "Traiguén", "Victoria"]
+    },
+    {
+        "region": "Región de Los Ríos",
+        "comunas": ["Selecciona tu ciudad", "Valdivia", "Corral", "Lanco", "Los Lagos", "Máfil", "Mariquina", "Paillaco", "Panguipulli", "La Unión", "Futrono", "Lago Ranco", "Río Bueno"]
+    },
+    {
+        "region": "Región de Los Lagos",
+        "comunas": ["Selecciona tu ciudad", "Puerto Montt", "Calbuco", "Cochamó", "Fresia", "Frutillar", "Los Muermos", "Llanquihue", "Maullín", "Puerto Varas", "Castro", "Ancud", "Chonchi", "Curaco de Vélez", "Dalcahue", "Puqueldón", "Queilén", "Quellón", "Quemchi", "Quinchao", "Osorno", "Puerto Octay", "Purranque", "Puyehue", "Río Negro", "San Juan de la Costa", "San Pablo", "Chaitén", "Futaleufú", "Hualaihué", "Palena"]
+    },
+    {
+        "region": "Región Aisén del Gral. Carlos Ibáñez del Campo",
+        "comunas": ["Selecciona tu ciudad", "Coihaique", "Lago Verde", "Aisén", "Cisnes", "Guaitecas", "Cochrane", "O’Higgins", "Tortel", "Chile Chico", "Río Ibáñez"]
+    },
+    {
+        "region": "Región de Magallanes y de la Antártica Chilena",
+        "comunas": ["Selecciona tu ciudad", "Punta Arenas", "Laguna Blanca", "Río Verde", "San Gregorio", "Cabo de Hornos (Ex Navarino)", "Antártica", "Porvenir", "Primavera", "Timaukel", "Natales", "Torres del Paine"]
+    },
+    {
+        "region": "Región Metropolitana de Santiago",
+        "comunas": ["Selecciona tu ciudad", "Cerrillos", "Cerro Navia", "Conchalí", "El Bosque", "Estación Central", "Huechuraba", "Independencia", "La Cisterna", "La Florida", "La Granja", "La Pintana", "La Reina", "Las Condes", "Lo Barnechea", "Lo Espejo", "Lo Prado", "Macul", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Pudahuel", "Quilicura", "Quinta Normal", "Recoleta", "Renca", "Santiago", "San Joaquín", "San Miguel", "San Ramón", "Vitacura", "Puente Alto", "Pirque", "San José de Maipo", "Colina", "Lampa", "Tiltil", "San Bernardo", "Buin", "Calera de Tango", "Paine", "Melipilla", "Alhué", "Curacaví", "María Pinto", "San Pedro", "Talagante", "El Monte", "Isla de Maipo", "Padre Hurtado", "Peñaflor"]
+    }
+]
+
+let test_carrito = [{
+    "guid_producto": "e3c4e426-0956-4763-b6de-1ce6d5356dcf",
+    "nombre_producto": "Ultra Pro: Protector Cartas G.I. Joe Hero",
+    "imagen_producto": "protector_gijoe.webp",
+    "categoria_producto": "accesorios",
+    "precio_producto": 9990,
+    "descuento_producto": 10
+}]
+
+let test_user =
+    {
+        "guid": "e44e2ed9-df4b-427a-9620-aa3caa2e1b0c",
+        "first_name": "Clayborne",
+        "last_name": "Kinghorne",
+        "email": "ckinghorne0@wired.com",
+        "birthday": "22/09/1999",
+        "address": "2988 Melvin Way",
+        "username": "ckinghorne0",
+        "password": "iH8+W@~7wD",
+        "role": "usuario",
+        "avatar_img": "https://api.dicebear.com/10.x/pixelbot/svg?tags=animation&seed=e44e2ed9"
+    }
+
+sessionStorage.setItem("usuario", JSON.stringify(test_user))
+sessionStorage.setItem("carrito", JSON.stringify(test_carrito))
+
 localStorage.setItem("usuarios", JSON.stringify(users))
 
 localStorage.setItem("productos", JSON.stringify(products))
+
+localStorage.setItem("regiones", JSON.stringify(cities))

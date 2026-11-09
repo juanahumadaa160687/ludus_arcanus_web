@@ -151,16 +151,16 @@ const form2 = document.getElementById("sign-up-form2")
             let guid = crypto.randomUUID()
 
             let user = {
-                guid: guid,
-                first_name: nombre,
-                last_name: apellido,
-                birthday: edad,
-                email: correo,
-                username: user_name,
-                address: direccion,
-                password: pass,
-                avatar: user_avatar,
-                role: "usuario"
+                "guid": guid,
+                "first_name": nombre,
+                "last_name": apellido,
+                "birthday": edad,
+                "email": correo,
+                "username": user_name,
+                "address": direccion,
+                "password": pass,
+                "avatar": user_avatar,
+                "role": "usuario"
             }
 
             let usuarios = JSON.parse(localStorage.getItem("usuarios"))

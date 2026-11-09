@@ -13,8 +13,8 @@
     --color-accent-a20: #ffa978;
 
     /** Colores de superficie del tema */
-    --color-surface-a0: #222526;
-    --color-surface-a10: #444747;
+    --color-surface-a0: #161616;
+    --color-surface-a10: #292929;
 
     /** Colores de éxito */
     --color-success-a0: #7dff95;
@@ -99,6 +99,10 @@ body{
     justify-content: space-between;
     align-items: center;
 
+    img{
+        width: 65px;
+        height: 40px;
+    }
 
     .navbar-toggler-icon{
         color: var(--color-primary-a10);

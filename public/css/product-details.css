@@ -5,11 +5,7 @@
 }
 
 #details-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    gap: 40px
+
 }
 
 #img-container{

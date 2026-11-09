@@ -41,11 +41,12 @@ function setActiveLink() {
 
 setActiveLink();
 
-/*Modificar navbar con usuario conectado
+//Modificar navbar con usuario conectado
 let user_avatar = document.getElementById('user-avatar')
 let logout = document.getElementById('log-out')
 let sign_in = document.getElementById('log-in')
 let sign_up = document.getElementById('sign-up')
+let carro_compras = document.getElementById("shopping-cart")
 
 let usuario = JSON.parse(sessionStorage.getItem('usuario'))
 
@@ -69,4 +70,8 @@ logout_link.addEventListener('click', function (){
     window.location.href='index.html'
 })
 
- */
+let carrito = JSON.parse(sessionStorage.getItem("carrito"))
+
+if (carrito !== null){
+    carro_compras.classList.remove('d-none')
+}
