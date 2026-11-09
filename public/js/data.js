@@ -493,7 +493,24 @@ let test_carrito = [{
     "categoria_producto": "accesorios",
     "precio_producto": 9990,
     "descuento_producto": 10
-}]
+},
+    {
+        "guid_producto": "e3c4e426-0956-4763-b6de-1ce6d5356dcf",
+        "nombre_producto": "Ultra Pro: Protector Cartas G.I. Joe Hero",
+        "imagen_producto": "protector_gijoe.webp",
+        "categoria_producto": "accesorios",
+        "precio_producto": 9990,
+        "descuento_producto": 10
+    },
+    {
+        "guid_producto": "e3c4e426-0956-4763-b6de-1ce6d5356dcf",
+        "nombre_producto": "Ultra Pro: Protector Cartas G.I. Joe Hero",
+        "imagen_producto": "protector_gijoe.webp",
+        "categoria_producto": "accesorios",
+        "precio_producto": 9990,
+        "descuento_producto": 10
+    }
+]
 
 let test_user =
     {

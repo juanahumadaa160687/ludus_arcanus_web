@@ -5,9 +5,7 @@
 }
 
 #carrito-container {
-    border: 1px solid var(--color-primary-a10);
     padding: 20px;
-    border-radius: 20px;
 }
 
 h5{
@@ -18,6 +16,13 @@ h5{
 
 small{
     color: var(--color-primary-a10);
+}
+
+.list-group-item{
+    a{
+        text-decoration: none;
+        color: var(--color-primary-a10);
+    }
 }
 
 .cta-button{
@@ -39,7 +44,6 @@ small{
     font-size: 1rem;
     transition: background-color 0.3s;
     border-radius: 10px;
-    margin-top: 1.5rem;
     cursor: not-allowed;
 }
 
@@ -78,19 +82,10 @@ small{
 li{
     color: var(--color-primary-a10);
 }
-.stepper{
-    --bs-range-track-bg: var(--color-accent-a10);
-    --bs-stepper-active-bg: var(--color-accent-a10);
-}
-.stepper-item:before{
-    background-color: var(--color-primary-a10);
-    color: var(--color-surface-a0);
-}
 
-.stepper-item.active:before{
-    background-color: var(--color-accent-a10);
-    color: var(--color-primary-a10);
-    border: 2px  solid var(--color-primary-a10);
+#precio-total, #total-header{
+    font-size: var(--font-size-header);
+    font-weight: var(--font-weight-header);
 }
 
 /* Extra small devices (phones, 600px and down) */

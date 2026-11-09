@@ -26,7 +26,7 @@
 <body>
 
 <header>
-  <nav class="navbar md:navbar-expand sticky-top md:fixed-top" id="navbar">
+  <nav class="navbar md:navbar-expand sticky-top" id="navbar">
     <div class="container-fluid">
       <img src="img/logo_ludus.png" alt="Ludus Arcanus Logo" width="65" height="40" class="d-inline-block align-text-top me-2">
       <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer" aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,19 +48,27 @@
               </button>
               <div class="menu" id="dropdown-menu">
                 <a class="menu-item" aria-current="page" href="juegos-mesa.html">Juegos de Mesa</a>
-                <a class="menu-item" aria-current="page" href="juegos-cartas.html">Juegos de Cartas</a>
-                <a class="menu-item" aria-current="page" href="juegos-rol.html">Juegos de Rol</a>
-                <a class="menu-item" aria-current="page" href="accesorios.html">Accesorios</a>
                 <hr class="menu-divider">
-                <a class="menu-item" aria-current="page" href="tienda.html">Ofertas</a>
+                <a class="menu-item" aria-current="page" href="juegos-cartas.html">Juegos de Cartas</a>
+                <hr class="menu-divider">
+                <a class="menu-item" aria-current="page" href="juegos-rol.html">Juegos de Rol</a>
+                <hr class="menu-divider">
+                <a class="menu-item" aria-current="page" href="accesorios.html">Accesorios</a>
               </div>
             </li>
             <li class="nav-item d-none" id="user-avatar">
+
             </li>
             <li class="nav-item d-none" id="shopping-cart">
-              <a class="nav-link" aria-current="page" href="carrito.html"><i class="bi bi-cart4"></i></a>
+              <a class="nav-link position-relative" aria-current="page" href="carrito.html">
+                <i class="bi bi-cart4"></i>
+                <span class="position-absolute top-25 start-100 translate-middle p-2 bg-danger border border-bg rounded-circle">
+                    <span class="visually-hidden">items en carrito</span>
+                </span>
+              </a>
             </li>
             <li class="nav-item d-none" id="log-out">
+
             </li>
             <li class="nav-item" id="log-in">
               <a class="nav-link" aria-current="page" href="sign-in.html">Ingresar</a>

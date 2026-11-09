@@ -66,9 +66,8 @@ let item_container = document.getElementById("item-container")
 let precio_total = 0
 for(let item in items){
     let precio_descuento = items[item].precio_producto - items[item].precio_producto * items[item].descuento_producto/100
-    precio_total = precio_descuento ++
+    precio_total += precio_descuento
 }
-console.log(precio_total)
 
 item_container.innerHTML = items.map(item => {
     return `
@@ -77,10 +76,12 @@ item_container.innerHTML = items.map(item => {
         <div class="d-flex justify-content-between align-items-center w-100 m-0 p-0">
           <p class="m-0">${item.nombre_producto}</p>
           <p class="m-0">${currency_format.format(item.precio_producto - item.precio_producto * item.descuento_producto/100)}</p>
+          <a type="button" class="delete-button"><i class="bi bi-trash3"></i></a>
         </div>
        </li>
     `
 })
+
 
 let subtotal = document.getElementById("subtotal")
 
@@ -114,14 +115,13 @@ radios.forEach(radio => {
         let total_container = document.getElementById('total')
 
         total_container.innerHTML = `
-            <td>Total</td>
-            <td class="d-flex justify-content-end">${currency_format.format(precio + valor)}</td>
+            <td id="total-header"><strong>Total</strong></td>
+            <td class="d-flex justify-content-end" id="precio-total">${currency_format.format(precio_total + valor)}</td>
         `
-
     })
 })
 
-const radio_pago = document.querySelectorAll('input[name=radio]')
+const radio_pago = document.querySelectorAll('input[name=radios]')
 
 radio_pago.forEach(pago => {
     pago.addEventListener('change', (e) =>{
