@@ -490,6 +490,6 @@ let cities = [
 //
 //localStorage.setItem("usuarios", JSON.stringify(users))
 //
-// localStorage.setItem("productos", JSON.stringify(products))
+//localStorage.setItem("productos", JSON.stringify(products))
 //
-// localStorage.setItem("regiones", JSON.stringify(cities))
+//localStorage.setItem("regiones", JSON.stringify(cities))
