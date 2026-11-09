@@ -486,10 +486,10 @@ let cities = [
     }
 ]
 
-sessionStorage.clear()
-
-localStorage.setItem("usuarios", JSON.stringify(users))
-
-localStorage.setItem("productos", JSON.stringify(products))
-
-localStorage.setItem("regiones", JSON.stringify(cities))
+//sessionStorage.clear()
+//
+//localStorage.setItem("usuarios", JSON.stringify(users))
+//
+// localStorage.setItem("productos", JSON.stringify(products))
+//
+// localStorage.setItem("regiones", JSON.stringify(cities))

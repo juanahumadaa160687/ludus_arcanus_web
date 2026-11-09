@@ -67,7 +67,6 @@ logout_link.addEventListener('click', function (){
     sign_in.classList.remove('d-none')
     sign_up.classList.remove('d-none')
 
-    window.location.href='index.html'
 })
 
 let carrito = JSON.parse(sessionStorage.getItem("carrito"))

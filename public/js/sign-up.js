@@ -100,7 +100,7 @@ const form1 = document.getElementById("sign-up-form1")
         }else{
 
             correo = mail
-            pass = password
+            pass = contrasena
             user_name = nombre_usuario
 
             stepper_2.classList.add("active")
@@ -159,13 +159,13 @@ const form2 = document.getElementById("sign-up-form2")
                 "username": user_name,
                 "address": direccion,
                 "password": pass,
-                "avatar": user_avatar,
+                "avatar_img": user_avatar,
                 "role": "usuario"
             }
 
             let usuarios = JSON.parse(localStorage.getItem("usuarios"))
 
-            usuarios.add(user)
+            usuarios.push(user)
 
             localStorage.setItem("usuarios", JSON.stringify(usuarios))
 
@@ -173,6 +173,10 @@ const form2 = document.getElementById("sign-up-form2")
 
             let bienvenida = document.getElementById("final_bienvenida")
             bienvenida.innerHTML = `<p class="text-center">Bienvenido <strong>${nombre} ${apellido}</strong> a la comunidad de Ludus Arcanus, ya puedes iniciar sesión.</p>`
+
+            let final = document.getElementById('fina')
+            form2.classList.add('d-none')
+            final.classList.remove('d-none')
 
         }
     })

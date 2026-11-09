@@ -21,9 +21,7 @@ user_profile.innerHTML = `
 `
 document.getElementById('btn-eliminar').addEventListener('click', (e) => {
     e.preventDefault()
-
     sessionStorage.clear()
-
     window.location.href='index.html'
 })
 
@@ -41,7 +39,7 @@ username.setAttribute('value', usuario.username)
 email.setAttribute('value', usuario.email)
 birthday.setAttribute('value', usuario.birthday)
 
-user_profile.addEventListener('submit', (e) => {
+document.getElementById('edit-user-form').addEventListener('submit', (e) => {
     e.preventDefault()
     e.stopPropagation()
 
@@ -51,6 +49,8 @@ user_profile.addEventListener('submit', (e) => {
     let user_name = username.value.toString()
     let mail = email.value.toString()
     let fNacimiento = birthday.value.toString()
+
+    console.log(apellido)
 
     let user = {
         "first_name": nombre,
