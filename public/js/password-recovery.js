@@ -26,15 +26,14 @@ document.getElementById('password-recovery-form').addEventListener('submit', (e)
         console.log(email_user)
 
         if(email_user === undefined){
-            let alert = document.getElementById('alert')
-            alert.classList.remove('d-none')
+            document.getElementById('email-validation').innerHTML = `<p><i class="bi bi-exclamation-triangle"></i> El correo electrónico ingresado no existe</p>`
 
             setTimeout(function () {
-                alert.classList.add('d-none')
+                document.getElementById('email-validation').innerHTML = ``
             }, 3500)
         }else{
 
-            sessionStorage.setItem('usuario', JSON.stringify(email_user))
+            sessionStorage.setItem('email_user', email_user.email)
 
             window.location.href='reset-password.html'
         }

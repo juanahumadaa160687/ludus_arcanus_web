@@ -48,9 +48,15 @@ let sign_in = document.getElementById('log-in')
 let sign_up = document.getElementById('sign-up')
 let carro_compras = document.getElementById("shopping-cart")
 
+let carrito = JSON.parse(sessionStorage.getItem("carrito"))
+
+if (carrito.length > 0){
+    carro_compras.classList.remove('d-none')
+}
+
 let usuario = JSON.parse(sessionStorage.getItem('usuario'))
 
-if (usuario !== null){
+if (usuario !== undefined){
     user_avatar.innerHTML = `<a class="nav-link" aria-current="page" href="user-profile.html"><span class="avatar"><img class="avatar-img" src="${usuario.avatar_img}" alt="avatar del usuario"></span> ${usuario.first_name + ' ' + usuario.last_name}</a>`
     user_avatar.classList.remove('d-none')
     logout.innerHTML = `<a class="nav-link" aria-current="page" href="" id="logout-link">Cerrar Sesión</a>`
@@ -68,9 +74,3 @@ logout_link.addEventListener('click', function (){
     sign_up.classList.remove('d-none')
 
 })
-
-let carrito = JSON.parse(sessionStorage.getItem("carrito"))
-
-if (carrito !== null){
-    carro_compras.classList.remove('d-none')
-}

@@ -2,8 +2,13 @@ let password = document.getElementById('password');
 let confirmPassword = document.getElementById('confirm-password')
 
 document.getElementById('sign-up-form').addEventListener('submit', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+
     let contrasena = password.value.toString()
     let confirm_contrasena = confirmPassword.value.toString()
+
+    console.log(contrasena)
 
     if (contrasena === '' || contrasena == null) {
         document.getElementById('password-validation').innerHTML = `<p><i class="bi bi-exclamation-triangle"></i> Este campo es obligatorio</p>`
@@ -30,7 +35,11 @@ document.getElementById('sign-up-form').addEventListener('submit', (e) => {
             document.getElementById('confirm-password-validation').innerHTML = ''
         }, 3500)
     }else{
-        let usuario = JSON.parse(sessionStorage.getItem('usuario'))
+        let usuarios = JSON.parse(localStorage.getItem('usuarios'))
+
+        let mail = sessionStorage.getItem('email_user')
+
+        let usuario = usuarios.find(usu => usu.email === mail)
 
         let user ={
             "guid": usuario.guid,
@@ -45,12 +54,15 @@ document.getElementById('sign-up-form').addEventListener('submit', (e) => {
             "avatar_img": usuario.avatar_img
         }
 
-        let usuarios = JSON.parse(localStorage.getItem('usuarios'))
+        let index = usuarios.findIndex(usu => usu.email === mail)
 
-        usuarios.splice(usuarios.indexOf(usuario.guid), 1)
+        usuarios.splice(index, 1)
 
-        usuario.push(user)
+        usuarios.push(user)
 
         localStorage.setItem('usuarios', JSON.stringify(usuarios))
+
+        window.location.href='sign-in.html'
+
     }
 })

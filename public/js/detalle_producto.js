@@ -50,9 +50,9 @@ if (detalle_producto.stock === 0){
     buttons_container.innerHTML = `<button class="cart-button" id="carrito"><i class="bi bi-cart4"></i> Agregar al carrito</button>`
 }
 
-
 let cart_button = document.getElementById("carrito")
 
+let items = JSON.parse(sessionStorage.getItem('carrito'))
 
 cart_button.addEventListener('click', function (){
 
@@ -65,13 +65,7 @@ cart_button.addEventListener('click', function (){
         descuento_producto: detalle_producto.discount
     }
 
-    let carrito = JSON.parse(sessionStorage.getItem("carrito"))
+    items.push(item)
 
-    if (carrito === []){
-        sessionStorage.setItem("carrito", JSON.stringify(item))
-    }else{
-        carrito.push(item)
-        sessionStorage.setItem("carrito", JSON.stringify(carrito))
-    }
-
+    sessionStorage.setItem('carrito', JSON.stringify(items))
 })

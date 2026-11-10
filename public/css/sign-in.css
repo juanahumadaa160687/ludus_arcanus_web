@@ -159,13 +159,3 @@
         height: 100dvh;
     }
 }
-
-@media only screen and (min-width: 2560px){
-    .sign-in-container{
-        width: 25%;
-        height: 75%;
-    }
-    #main-container{
-        height: 100dvh;
-    }
-}
