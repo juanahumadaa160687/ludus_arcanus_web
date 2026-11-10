@@ -5,6 +5,7 @@ const currency_format = new Intl.NumberFormat('es-CL', {
 
 let usuario = JSON.parse(sessionStorage.getItem("usuario"))
 
+
 let container_address = document.getElementById("container-address")
 let container_name = document.getElementById("container-name")
 

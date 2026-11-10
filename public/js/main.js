@@ -50,13 +50,17 @@ let carro_compras = document.getElementById("shopping-cart")
 
 let carrito = JSON.parse(sessionStorage.getItem("carrito"))
 
+if (carrito === null){
+    carrito = []
+}
+
 if (carrito.length > 0){
     carro_compras.classList.remove('d-none')
 }
 
 let usuario = JSON.parse(sessionStorage.getItem('usuario'))
 
-if (usuario !== undefined){
+if (usuario !== undefined || true){
     user_avatar.innerHTML = `<a class="nav-link" aria-current="page" href="user-profile.html"><span class="avatar"><img class="avatar-img" src="${usuario.avatar_img}" alt="avatar del usuario"></span> ${usuario.first_name + ' ' + usuario.last_name}</a>`
     user_avatar.classList.remove('d-none')
     logout.innerHTML = `<a class="nav-link" aria-current="page" href="" id="logout-link">Cerrar Sesión</a>`

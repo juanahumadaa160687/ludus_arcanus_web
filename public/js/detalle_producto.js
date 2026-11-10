@@ -52,7 +52,8 @@ if (detalle_producto.stock === 0){
 
 let cart_button = document.getElementById("carrito")
 
-let items = JSON.parse(sessionStorage.getItem('carrito'))
+
+
 
 cart_button.addEventListener('click', function (){
 
@@ -65,7 +66,15 @@ cart_button.addEventListener('click', function (){
         descuento_producto: detalle_producto.discount
     }
 
+    let items = JSON.parse(sessionStorage.getItem('carrito'))
+
+    if (items === null){
+        items = []
+    }
+
     items.push(item)
 
     sessionStorage.setItem('carrito', JSON.stringify(items))
+
+    window.location.reload()
 })
